@@ -1,3 +1,12 @@
+if &compatible
+  set nocompatible
+endif
+
+let s:is_windows = has('win16') || has('win32') || has('win64')
+function! IsWindows()
+  return s:is_windows
+endfunction
+
 " English interface
 if IsWindows()
   language message en
