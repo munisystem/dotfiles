@@ -24,3 +24,6 @@ function! s:source_rc(path)
 endfunction
 
 call s:source_rc('encoding.rc.vim')
+
+" General
+call s:source_rc('vimrc')

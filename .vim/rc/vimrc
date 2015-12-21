@@ -1,3 +1,24 @@
+" Magic spell
 if &compatible
   set nocompatible
 endif
+
+" Clipboard register
+if has('unnamedplus')
+  set clipboard& clipboard+=unnamedplus
+else
+  set clipboard& clipboard+=unnamed
+endif
+
+" Backups
+set nowritebackup
+set nobackup
+set noswapfile
+set formatoptions=q
+
+" Undo
+set undofile
+set undodir=~/.vim/undo
+
+" Diff
+set nodiff
