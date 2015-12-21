@@ -1,0 +1,23 @@
+# archives
+*.zip
+*.lzh
+*.tar.gz
+*.tgz
+*.bz2
+*.dmg
+
+# libraries
+*.so
+*.dylib
+*.dll
+*.lai
+*.la
+*.a
+*.lib
+
+# others
+.DS_Store
+Desktop.ini
+*.swp
+*.tmp
+*.log
