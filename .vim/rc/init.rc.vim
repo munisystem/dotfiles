@@ -30,3 +30,6 @@ call s:source_rc('vimrc')
 
 " General
 call s:source_rc('plugin.rc.vim')
+
+" View
+call s:source_rc('view.rc.vim')
