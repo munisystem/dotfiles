@@ -18,3 +18,7 @@ set ffs=unix,dos,mac
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
+
+if has('multi_byte_ime')
+  set iminsert=0 imsearch=0
+endif
