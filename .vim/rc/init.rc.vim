@@ -27,3 +27,6 @@ call s:source_rc('encoding.rc.vim')
 
 " General
 call s:source_rc('vimrc')
+
+" General
+call s:source_rc('plugin.rc.vim')
