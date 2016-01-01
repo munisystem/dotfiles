@@ -1,6 +1,7 @@
 Plug 'Shougo/vimfiler'
 
 let g:vimfiler_safe_mode_by_default = 0
+
 " Icons
 let g:vimfiler_tree_leaf_icon   = ' '
 let g:vimfiler_tree_opened_icon = '▾'

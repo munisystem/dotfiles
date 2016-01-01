@@ -27,5 +27,5 @@ set nodiff
 set ignorecase
 
 " Spell
-set spell
+" set spell
 set spelllang=en,cjk
