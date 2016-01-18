@@ -5,7 +5,7 @@ dotfiles
 
   - git
   - vim
-    - neobundle.vim
+    - vim-plug
   - zsh
     - oh-my-zsh
 
