@@ -1,3 +1,6 @@
+"------------------------------------------------------
+" Colorful statusline
+
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 

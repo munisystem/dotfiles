@@ -1,3 +1,9 @@
+"------------------------------------------------------
+" Powerful file explorer
+"
+" Usage
+" .<C-f> or ,<C-f>
+
 Plug 'Shougo/vimfiler'
 
 let g:vimfiler_safe_mode_by_default = 0

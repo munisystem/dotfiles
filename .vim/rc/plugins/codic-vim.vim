@@ -1,3 +1,10 @@
+"------------------------------------------------------
+" Use codic for vim
+"
+" Usage
+" Uesr key binding
+" <C-x><C-t>
+
 Plug 'koron/codic-vim'
 
 inoremap <silent> <C-x><C-t>  <C-R>=<SID>codic_complete()<CR>

@@ -1,3 +1,9 @@
+"------------------------------------------------------
+" Memo plugin
+"
+" Usage
+" Type ':MemoNew'
+
 Plug 'glidenote/memolist.vim'
 
 let g:memolist_memo_suffix = "md"
