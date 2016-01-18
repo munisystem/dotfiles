@@ -1,3 +1,6 @@
+"------------------------------------------------------
+" init.rc.vim
+
 let s:is_windows = has('win16') || has('win32') || has('win64')
 function! IsWindows()
   return s:is_windows

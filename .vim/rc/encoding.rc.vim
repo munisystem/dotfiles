@@ -1,3 +1,6 @@
+"------------------------------------------------------
+" encoding.rc.vim
+
 if has('vim_starting')
   set encoding=utf-8
 endif

@@ -1,5 +1,6 @@
 "------------------------------------------------------
 " plugin.rc.vim
+
 " Vim=Plug
 if has('vim_starting')
   set rtp+=$HOME/.vim/plugged/vim-plug
