@@ -1,5 +1,5 @@
 "------------------------------------------------------
-" gvimrc
+" view.rc.vim
 
 " Colorscheme
 colorscheme Tomorrow-Night-Bright
