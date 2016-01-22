@@ -49,7 +49,7 @@ plugins=(git zsh-syntax-highlighting)
 # User configuration
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/dotfiles
-export PATH=/usr/bin:/usr/local/bin:/bin:$HOME/dotfiles
+export PATH=/usr/local/bin:/usr/bin:/bin:$HOME/dotfiles
 
 # echancd
 if [ -f "/home/muni/.enhancd/zsh/enhancd.zsh" ]; then
