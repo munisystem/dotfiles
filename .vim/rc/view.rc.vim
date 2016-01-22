@@ -2,7 +2,7 @@
 " gvimrc
 
 " Colorscheme
-colorscheme molokai
+colorscheme Tomorrow-Night-Bright
 set t_Co=256
 
 " Status line
