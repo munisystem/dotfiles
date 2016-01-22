@@ -31,6 +31,7 @@ setup(){
     fi
 
     if has vim; then
+        symlink "$dotfiles/.vimrc" "$HOME/.vimrc"
         symlink "$dotfiles/.vim" "$HOME/.vim"
     fi
 }
