@@ -51,6 +51,10 @@ plugins=(git zsh-syntax-highlighting)
 # export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/dotfiles
 export PATH=/usr/local/bin:/usr/bin:/bin:$HOME/dotfiles
 
+# .rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+
 # echancd
 if [ -f "/home/muni/.enhancd/zsh/enhancd.zsh" ]; then
     export ENHANCD_FILTER="/usr/bin/peco:fzf:non-existing-filter"
