@@ -49,7 +49,7 @@ plugins=(git zsh-syntax-highlighting)
 # User configuration
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/dotfiles
-export PATH=/usr/local/bin:/usr/bin:/bin:$HOME/dotfiles
+export PATH=/usr/local/bin:/usr/bin:/bin:/sbin:$HOME/dotfiles
 
 # .rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
