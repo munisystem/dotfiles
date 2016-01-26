@@ -4,8 +4,6 @@
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 
-set guifont=Ricty\ 18
-
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
