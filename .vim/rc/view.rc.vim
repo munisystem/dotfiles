@@ -36,3 +36,10 @@ set noshowcmd
 " Parenthesis
 set showmatch
 set matchtime=2
+
+" Font
+if IsMac()
+  set guifont=Ricty\ Regular\ for\ Powerline\ 18
+else
+  set guifont=Ricty\ 18
+endif

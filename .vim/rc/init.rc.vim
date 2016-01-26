@@ -6,6 +6,11 @@ function! IsWindows()
   return s:is_windows
 endfunction
 
+let s:is_mac = has('mac')
+function! IsMac()
+  return s:is_mac
+endfunction
+
 " English interface
 if IsWindows()
   language message en
