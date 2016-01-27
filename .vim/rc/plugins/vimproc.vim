@@ -8,7 +8,7 @@ function! MakeVimproc(info)
     elseif has('unix')
       !make -f make_unix.mak
     elseif has('mac')
-      !make -f make_mac.mak
+      !make
     endif
   endif
 endfunction
