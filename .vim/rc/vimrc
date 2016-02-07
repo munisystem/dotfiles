@@ -32,3 +32,6 @@ set ignorecase
 " Spell
 " set spell
 set spelllang=en,cjk
+
+" Backspace
+set backspace=indent,eol,start
