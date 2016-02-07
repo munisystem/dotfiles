@@ -14,6 +14,10 @@ setup(){
     	ln -sf "$1" "$2"
     }
 
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+      curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    fi
+
     if [ -d "$dotfiles" ]; then
         (cd "$dotfiles" && git pull --rebase)
     else
@@ -32,7 +36,12 @@ setup(){
 
     if has vim; then
         symlink "$dotfiles/.vimrc" "$HOME/.vimrc"
+        rm -r "$HOME/.vim"
         symlink "$dotfiles/.vim" "$HOME/.vim"
+    fi
+    
+    if has vim; then
+      symlink "$dotfiles/.tmux.conf" "$HOME/.tmux.conf"
     fi
 }
 
