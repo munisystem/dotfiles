@@ -1,2 +1,3 @@
 " init.vimperatorrc
 source ~/.vimperator/rc/view.vimperatorrc
+source ~/.vimperator/rc/key.vimperatorrc
