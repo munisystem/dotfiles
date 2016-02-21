@@ -2,3 +2,4 @@
 source ~/.vimperator/rc/view.vimperatorrc
 source ~/.vimperator/rc/key.vimperatorrc
 source ~/.vimperator/rc/vimperatorrc
+source ~/.vimperator/rc/plugin.vimperatorrc
