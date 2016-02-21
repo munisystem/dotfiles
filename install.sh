@@ -25,6 +25,12 @@ setup(){
     fi
 
     symlink "$dotfiles/.vimperatorrc" "$HOME/.vimperatorrc"
+    rm -r "$HOME/.vimperator"
+    symlink "$dotfiles/.vimperator" "$HOME/.vimperator"
+    if [ ! -d "$HOME/.vimperator/plugin/vimppm" ]
+      (mkdir "$HOME/.vimperator/plugin" && cd "$HOME/.vimperator/plugin" && git clone https://github.com/cd01/vimppm)
+    fi
+
     symlink "$dotfiles/.gitconfig" "$HOME/.gitconfig"
     symlink "$dotfiles/.gitignore_local" "$HOME/.gitignore"
 
