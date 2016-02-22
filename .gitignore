@@ -1,2 +1,5 @@
 .vim/plugged
 .vim/.netrwhist
+.vimperator/info
+.vimperator/vimppm
+.vimperator/plugin

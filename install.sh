@@ -46,7 +46,7 @@ setup(){
         symlink "$dotfiles/.vim" "$HOME/.vim"
     fi
     
-    if has vim; then
+    if has tmux; then
       symlink "$dotfiles/.tmux.conf" "$HOME/.tmux.conf"
     fi
 }
