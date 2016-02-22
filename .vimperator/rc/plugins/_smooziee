@@ -1,0 +1,3 @@
+" _smooziee.js
+let g:smooziee_scroll_amount="100"
+let g:smooziee_scroll_interval="15"
