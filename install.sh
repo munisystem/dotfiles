@@ -40,6 +40,11 @@ setup(){
         symlink "$dotfiles/muni.zsh-theme" "$HOME/.oh-my-zsh/themes/muni.zsh-theme"
     fi
 
+    if has fish; then
+        rm -r "$HOME/.config/fish"
+        symlink "$dotfiles/fish"  "$HOME/config/fish"
+    fi
+
     if has vim; then
         symlink "$dotfiles/.vimrc" "$HOME/.vimrc"
         rm -r "$HOME/.vim"
