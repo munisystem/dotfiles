@@ -42,7 +42,7 @@ setup(){
 
     if has fish; then
         rm -r "$HOME/.config/fish"
-        symlink "$dotfiles/fish"  "$HOME/config/fish"
+        symlink "$dotfiles/fish"  "$HOME/.config/fish"
     fi
 
     if has vim; then
