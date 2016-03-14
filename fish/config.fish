@@ -30,11 +30,8 @@ function peco_select_history
   end
 end
 
+# key bindings
 function fish_user_key_bindings
   bind \cs peco_select_history
-end
-
-# ghq
-function fish_user_key_bindings
   bind \c] peco_select_ghq_repository
 end
