@@ -8,7 +8,7 @@ function fish_prompt --description 'Write out the prompt'
 	# PWD
 	set_color $fish_color_cwd
 	echo -n (prompt_pwd)
-	set_color normal
+	set_color FF7400
 
 	printf '%s ' (__fish_git_prompt)
 
