@@ -21,3 +21,6 @@ Desktop.ini
 *.swp
 *.tmp
 *.log
+
+# JetBrainsIDE
+.idea
