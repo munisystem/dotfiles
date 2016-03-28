@@ -12,6 +12,7 @@ rbenv rehash >/dev/null ^&1
 
 # go
 set -x GOPATH $HOME/.go
+set PATH $GOPATH/bin $PATH
 
 # peco
 function peco_select_history
