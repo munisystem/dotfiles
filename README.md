@@ -8,9 +8,11 @@ dotfiles
     - vim-plug
   - zsh
     - oh-my-zsh
+  - fish
+    - fisherman
 
 ## Installation
 
 ```sh
-curl -sL https://raw.githubusercontent.com/munisystem/dotfiles/master/install.sh | sh
+curl -sL http://dots.munisystem.net | sh
 ```
