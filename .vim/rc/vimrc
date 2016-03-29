@@ -38,3 +38,6 @@ set backspace=indent,eol,start
 
 " Mouse
 set mouse=a
+
+" Fold
+set foldmethod=marker
