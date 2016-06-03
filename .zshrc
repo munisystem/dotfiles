@@ -52,6 +52,8 @@ plugins=(git zsh-syntax-highlighting)
 export PATH=/usr/local/bin:/usr/bin:/bin:/sbin:$HOME/dotfiles
 
 # .rbenv
+
+export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
