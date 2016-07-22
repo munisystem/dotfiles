@@ -6,7 +6,6 @@ set fisher_config ~/.config/fisherman
 source $fisher_home/config.fish
 
 # rbenv
-set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
 
