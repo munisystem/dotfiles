@@ -14,12 +14,17 @@ setup(){
     	ln -sf "$1" "$2"
     }
 
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then
-      curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    # if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    #   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    # fi
+
+    if [ ! -d "$HOME/.config/fisherman" ]; then
+      curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
     fi
 
     if [ -d "$dotfiles" ]; then
-        (cd "$dotfiles" && git pull --rebase)
+        echo "skip install remote dotfiles."
+        # (cd "$dotfiles" && git pull --rebase)
     else
         git clone git@github.com:munisystem/dotfiles "$dotfiles"
     fi

@@ -1,9 +1,7 @@
 # fish.config
 
-# fisherman
-set fisher_home ~/.local/share/fisherman
-set fisher_config ~/.config/fisherman
-source $fisher_home/config.fish
+# fish
+set -U fish_path ~/fish
 
 # rbenv
 set PATH $HOME/.rbenv/shims $PATH

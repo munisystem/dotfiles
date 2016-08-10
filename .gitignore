@@ -5,3 +5,6 @@
 .vimperator/plugin
 
 fish/fish_history
+fish/completions
+fish/conf.d
+fish/functions/fisher.fish
