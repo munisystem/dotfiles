@@ -37,7 +37,29 @@ set _vbr_gray    (set_color 777)
 
 
 
-# [user@host] path [branch [git status]] prompt
+# goversion
+function _go_prompt
+	echo (go version | awk '{print $3}' | sed -e 's/^go//g')
+end
+
+function _is_go_dir
+	echo (ls | grep .go ^/dev/null)
+end
+
+
+
+# goversion
+function _ruby_prompt
+	echo (rbenv version | awk '{print $1}')
+end
+
+function _is_ruby_dir
+	echo (ls | grep Gemfile ^/dev/null)
+end
+
+
+
+# [user@host] path langversion [branch [git status]] prompt
 function fish_prompt
 	set -l exit_code $status
 
@@ -52,6 +74,16 @@ function fish_prompt
 
 	# path
 	set prompt $prompt $_vbr_gray(pwd | sed "s:^$HOME:~:")
+
+	# Go
+	if [ (_is_go_dir) ]
+		set prompt $prompt $_vbr_green'go(v'(_go_prompt)')'
+	end
+
+	# Ruby
+	if [ (_is_ruby_dir) ]
+		set prompt $prompt $_vbr_green'ruby(v'(_go_prompt)')'
+	end
 
 	# Git
 	set prompt $prompt (__fish_git_prompt '%s')
