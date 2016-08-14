@@ -1,15 +1,18 @@
 # fish.config
+# Initialize
+set -U fish_user_paths /bin
+set -U fish_user_paths /sbin $fish_user_paths
+set -U fish_user_paths /usr/sbin $fish_user_paths
+set -U fish_user_paths /usr/bin $fish_user_paths
+set -U fish_user_paths /usr/local/bin $fish_user_paths
 
-# fish
-set -U fish_path ~/fish
-
-# rbenv
-set PATH $HOME/.rbenv/shims $PATH
-rbenv rehash >/dev/null ^&1
+# # rbenv
+set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
+rbenv rehash ^/dev/null ^&1
 
 # go
-set -x GOPATH $HOME/.go
-set PATH $GOPATH/bin $PATH
+set -x GOPATH "$HOME/.go"
+set -U fish_user_paths $fish_user_paths "$GOPATH/bin"
 
 # peco
 function peco_select_history

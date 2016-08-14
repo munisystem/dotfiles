@@ -18,8 +18,8 @@ setup(){
     #   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
     # fi
 
-    if [ ! -d "$HOME/.config/fisherman" ]; then
-      curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+    if [ ! -d "$HOME/.config/fish/functions/" ]; then
+      fish -c 'curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher'
     fi
 
     if [ -d "$dotfiles" ]; then
@@ -46,8 +46,11 @@ setup(){
     fi
 
     if has fish; then
-        rm -r "$HOME/.config/fish"
-        symlink "$dotfiles/fish"  "$HOME/.config/fish"
+        symlink "$dotfiles/fish/fishfile"  "$HOME/.config/fish/fishfile"
+        fish -c 'fisher'
+        symlink "$dotfiles/fish/config.fish"  "$HOME/.config/fish/config.fish"
+        symlink "$dotfiles/fish/functions/fish_prompt.fish"  "$HOME/.config/fish/functions/fish_prompt.fish"
+        symlink "$dotfiles/fish/functions/fish_title.fish"  "$HOME/.config/fish/functions/fish_title.fish"
     fi
 
     if has vim; then
@@ -59,6 +62,7 @@ setup(){
     if has tmux; then
       symlink "$dotfiles/.tmux.conf" "$HOME/.tmux.conf"
     fi
+
 }
 
 setup
