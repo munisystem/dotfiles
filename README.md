@@ -3,13 +3,13 @@ dotfiles
 
 ## Information
 
-  - git
-  - vim
-    - vim-plug
-  - zsh
-    - oh-my-zsh
-  - fish
-    - fisherman
+- git
+- vim
+  - vim-plug
+- zsh
+  - oh-my-zsh
+- fish
+  - fisherman
 
 ## Installation
 
