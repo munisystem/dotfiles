@@ -41,3 +41,6 @@ set mouse=a
 
 " Fold
 set foldmethod=marker
+
+" Beep
+set visualbell
