@@ -1,5 +1,6 @@
 fisherman/ansible-completion
 fisherman/docker-completion
 fisherman/getopts
+munisystem/itamae-completion
 yoshiori/fish-peco_select_ghq_repository
 fisherman/z
