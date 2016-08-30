@@ -18,4 +18,4 @@
   br = branch
   pu = push
 [ghq]
-  root = ~/gitrepos
+  root = ~/repos/src

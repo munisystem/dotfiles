@@ -11,7 +11,7 @@ set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
 rbenv rehash ^/dev/null ^&1
 
 # go
-set -x GOPATH "$HOME/.go"
+set -x GOPATH "$HOME/repos"
 set -U fish_user_paths $fish_user_paths "$GOPATH/bin"
 
 # peco
