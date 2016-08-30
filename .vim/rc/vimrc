@@ -29,10 +29,6 @@ set nodiff
 " Case
 set ignorecase
 
-" Spell
-" set spell
-set spelllang=en,cjk
-
 " Backspace
 set backspace=indent,eol,start
 
@@ -42,5 +38,6 @@ set mouse=a
 " Fold
 set foldmethod=marker
 
-" Beep
-set visualbell
+" fast scroll
+set lazyredraw
+set ttyfast
