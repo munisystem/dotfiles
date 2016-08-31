@@ -40,9 +40,8 @@ setup(){
     symlink "$dotfiles/.gitignore_local" "$HOME/.gitignore"
 
     if has zsh; then
-        symlink "$dotfiles/.zshrc" "$HOME/.zshrc"
-        symlink "$dotfiles/.myzshrc" "$HOME/.myzshrc"
-        symlink "$dotfiles/muni.zsh-theme" "$HOME/.oh-my-zsh/themes/muni.zsh-theme"
+        symlink "$dotfiles/.zsh" "$HOME/.zsh"
+        symlink "$dotfiles/.zsh/.zshenv" "$HOME/.zshenv"
     fi
 
     if has fish; then
