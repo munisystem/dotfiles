@@ -10,7 +10,7 @@ export PATH=/usr/local/bin:/usr/bin:/usr/sbin/:/sbin:/bin
 ## Golang
 GOPATH=$HOME/repos
 export GOPATH
-export PATH=$GOPATH:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 ## ruby
 export PATH=$HOME/.rbenv/shims:$PATH
