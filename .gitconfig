@@ -11,11 +11,15 @@
   interactive = auto
   grep = auto
 [alias]
-  st = status
-  a  = add
-  cm = commit
+  i = init
+  a = add
+  c = commit
+  p = push
+  b = branch
   co = checkout
-  br = branch
-  pu = push
+  r = rebase
+  re = reset
+  ref = reflog
+  s = status
 [ghq]
   root = ~/repos/src
