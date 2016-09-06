@@ -14,10 +14,6 @@ setup(){
     	ln -sf "$1" "$2"
     }
 
-    # if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    #   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-    # fi
-
     if [ ! -d "$HOME/.config/fish/functions/" ]; then
       fish -c 'curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher'
     fi
@@ -44,13 +40,13 @@ setup(){
         symlink "$dotfiles/.zsh/.zshenv" "$HOME/.zshenv"
     fi
 
-    if has fish; then
-        symlink "$dotfiles/fish/fishfile"  "$HOME/.config/fish/fishfile"
-        fish -c 'fisher'
-        symlink "$dotfiles/fish/config.fish"  "$HOME/.config/fish/config.fish"
-        symlink "$dotfiles/fish/functions/fish_prompt.fish"  "$HOME/.config/fish/functions/fish_prompt.fish"
-        symlink "$dotfiles/fish/functions/fish_title.fish"  "$HOME/.config/fish/functions/fish_title.fish"
-    fi
+    # if has fish; then
+    #     symlink "$dotfiles/fish/fishfile"  "$HOME/.config/fish/fishfile"
+    #     fish -c 'fisher'
+    #     symlink "$dotfiles/fish/config.fish"  "$HOME/.config/fish/config.fish"
+    #     symlink "$dotfiles/fish/functions/fish_prompt.fish"  "$HOME/.config/fish/functions/fish_prompt.fish"
+    #     symlink "$dotfiles/fish/functions/fish_title.fish"  "$HOME/.config/fish/functions/fish_title.fish"
+    # fi
 
     if has vim; then
         symlink "$dotfiles/.vimrc" "$HOME/.vimrc"
