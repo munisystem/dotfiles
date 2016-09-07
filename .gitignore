@@ -1,11 +1,11 @@
-.vim/plugged
-.vim/.netrwhist
-.vimperator/info
-.vimperator/vimppm
-.vimperator/plugin
+config/.vim/plugged
+config/.vim/.netrwhist
+config/.vimperator/info
+config/.vimperator/vimppm
+config/.vimperator/plugin
 
-fish/fish_history
-fish/completions
-fish/conf.d
-fish/functions/fisher.fish
-fish/fishd*
+config/fish/fish_history
+config/fish/completions
+config/fish/conf.d
+config/fish/functions/fisher.fish
+config/fish/fishd*

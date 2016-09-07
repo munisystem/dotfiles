@@ -3,20 +3,20 @@
 set -e
 set -u
 
+symlink(){
+	ln -sf "$1" "$2"
+}
+
+has(){
+    type "$1" > /dev/null 2>&1
+}
+
 setup(){
-    dotfiles=$HOME/dotfiles
+    dotfiles=$HOME/dotfiles/config
 
-    has(){
-        type "$1" > /dev/null 2>&1
-    }
-
-    symlink(){
-    	ln -sf "$1" "$2"
-    }
-
-    if [ ! -d "$HOME/.config/fish/functions/" ]; then
-      fish -c 'curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher'
-    fi
+#    if [ ! -d "$HOME/.config/fish/functions/" ]; then
+#      fish -c 'curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher'
+#    fi
 
     if [ -d "$dotfiles" ]; then
         echo "skip install remote dotfiles."
@@ -53,7 +53,7 @@ setup(){
         rm -r "$HOME/.vim"
         symlink "$dotfiles/.vim" "$HOME/.vim"
     fi
-    
+
     if has tmux; then
       symlink "$dotfiles/.tmux.conf" "$HOME/.tmux.conf"
     fi
