@@ -1,9 +1,15 @@
+bin/itamae-*
+
+# vim
 config/.vim/plugged
 config/.vim/.netrwhist
+
+# vimperator
 config/.vimperator/info
 config/.vimperator/vimppm
 config/.vimperator/plugin
 
+# fish
 config/fish/fish_history
 config/fish/completions
 config/fish/conf.d

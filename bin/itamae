@@ -1,0 +1,16 @@
+#!/bin/sh
+
+version="0.0.9"
+
+bin="itamae-x86_64-$(uname | tr "[A-Z]" "[a-z]")"
+
+itamae="bin/${bin}-${version}"
+if ! [ -f "${itamae}" ]; then
+  url="https://github.com/k0kubun/itamae-mruby/releases/download/v${version}/${bin}.zip"
+  curl -L $url > "/tmp/${itamae_bin}.zip";
+  unzip "/tmp/${bin}.zip"
+  mv $bin $itamae
+  chmod +x $itamae
+fi
+
+exec $itamae $@
