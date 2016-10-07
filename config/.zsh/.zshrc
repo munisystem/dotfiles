@@ -1,5 +1,14 @@
 # Initialize
 
+## Golang
+GOPATH=$HOME/repos
+export GOPATH
+export PATH=$GOPATH/bin:$PATH
+
+## ruby
+# export PATH=$HOME/.rbenv/shims:$PATH
+eval "$(rbenv init -)"
+
 ## plugin
 . "$ZDOTDIR/plugin.zsh"
 
