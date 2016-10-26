@@ -23,6 +23,7 @@ eval "$(rbenv init -)"
 
 # config
 setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 setopt EXTENDED_HISTORY
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
