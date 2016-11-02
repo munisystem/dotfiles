@@ -1,14 +1,14 @@
 #!/bin/sh
 
-version="0.0.9"
+version="0.5.0"
 
-bin="itamae-x86_64-$(uname | tr "[A-Z]" "[a-z]")"
+bin="mitamae-x86_64-$(uname | tr "[A-Z]" "[a-z]")"
 
 itamae="bin/${bin}-${version}"
 if ! [ -f "${itamae}" ]; then
-  url="https://github.com/k0kubun/itamae-mruby/releases/download/v${version}/${bin}.zip"
-  curl -L $url > "/tmp/${itamae_bin}.zip";
-  unzip "/tmp/${bin}.zip"
+  url="https://github.com/k0kubun/mitamae/releases/download/v${version}/${bin}.tar.gz"
+  curl -L $url > "/tmp/${bin}.tar.gz";
+  tar zxvf "/tmp/${bin}.tar.gz"
   mv $bin $itamae
   chmod +x $itamae
 fi
