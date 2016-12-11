@@ -20,3 +20,13 @@ __peco_ghq() {
   zle reset-prompt
 }
 zle -N __peco_ghq
+
+__peco_sbox() {
+  local selected_dir=$(sbox list | peco --query "$LBUFFER")
+  if [[ -n "$selected_dir" ]]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle reset-prompt
+}
+zle -N __peco_sbox

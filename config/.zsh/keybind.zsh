@@ -6,4 +6,5 @@ bindkey '^N' history-search-forward
 
 ## peco
 bindkey '^R' __peco_select_history
-bindkey '^]' __peco_ghq
+bindkey '^]''r' __peco_ghq
+bindkey '^]''s' __peco_sbox
