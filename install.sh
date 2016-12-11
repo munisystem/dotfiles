@@ -4,6 +4,7 @@ os=$(uname | tr "[A-Z]" "[a-z]")
 dotfiles=$HOME/dotfiles
 if [ -d "$dotfiles" ]; then
   echo "👍  Skip install remote dotfiles."
+  echo ""
 else
   git clone git@github.com:munisystem/dotfiles "$dotfiles"
 fi
