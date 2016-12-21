@@ -9,6 +9,12 @@ export PATH=$GOPATH/bin:$PATH
 # export PATH=$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
 
+## python
+PYENV_ROOT=$HOME/.pyenv
+export PYENV_ROOT
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+
 ## plugin
 . "$ZDOTDIR/plugin.zsh"
 
