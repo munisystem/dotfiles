@@ -11,4 +11,4 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "mafredri/zsh-async", "on:sindresorhus/pure"
 zplug "sindresorhus/pure"
 
-zplug load --verbose
+zplug load
