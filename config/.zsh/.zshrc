@@ -15,6 +15,9 @@ export PYENV_ROOT
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
 
+## rust
+export PATH=$HOME/.cargo/bin:$PATH
+
 ## plugin
 . "$ZDOTDIR/plugin.zsh"
 
