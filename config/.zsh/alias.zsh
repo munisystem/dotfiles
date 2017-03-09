@@ -15,3 +15,6 @@ alias grb='git rebase'
 alias grs='git reset'
 alias grf='git reflog'
 alias gs='git status'
+
+## envchain
+alias ec='envchain'
