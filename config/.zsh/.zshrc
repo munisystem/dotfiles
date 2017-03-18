@@ -18,6 +18,10 @@ eval "$(pyenv init -)"
 ## rust
 export PATH=$HOME/.cargo/bin:$PATH
 
+# sbox
+SBOX_ROOT=$HOME/sandbox
+export SBOX_ROOT
+
 ## plugin
 . "$ZDOTDIR/plugin.zsh"
 
