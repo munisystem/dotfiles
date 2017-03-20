@@ -3,3 +3,5 @@ function! s:source_rc(path)
 endfunction
 
 call s:source_rc('encoding.vim')
+
+call s:source_rc('vimrc')
