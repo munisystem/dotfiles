@@ -1,5 +1,9 @@
 # Initialize
 
+## NVIM
+XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME
+
 ## Golang
 GOPATH=$HOME/repos
 export GOPATH
