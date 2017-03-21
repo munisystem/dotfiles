@@ -3,6 +3,10 @@
 ## use LSCOLOR
 alias ls="ls -G"
 
+## nvim
+alias vim='nvim'
+alias vi='nvim'
+
 ## git
 alias gi='git init'
 alias ga='git add'
