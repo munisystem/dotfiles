@@ -21,7 +21,7 @@ set formatoptions=q
 
 " Undo
 set undofile
-set undodir=~/.vim/undo
+set undodir=$XDG_CONFIG_HOME/nvim/undo
 
 " Diff
 set nodiff
