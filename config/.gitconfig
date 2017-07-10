@@ -23,3 +23,6 @@
   s = status
 [ghq]
   root = ~/repos/src
+[github]
+	user = munisystem
+	privatekey = /Users/muni/.ssh/keys/github
