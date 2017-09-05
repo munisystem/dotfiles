@@ -22,3 +22,5 @@ export XDG_CONFIG_HOME
 # sbox
 SBOX_ROOT=$HOME/sandbox
 export SBOX_ROOT
+
+LC_LANG=ja.UTF-8
