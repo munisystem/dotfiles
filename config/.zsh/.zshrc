@@ -7,7 +7,7 @@ export PATH=$GOPATH/bin:$PATH
 
 ## ruby
 export PATH=$HOME/.rbenv/shims:$PATH
-eval "$(rbenv init -)"
+eval "$(rbenv init - --no-rehash)"
 
 ## node
 export PATH=/usr/local/var/nodebrew/current/bin:$PATH
