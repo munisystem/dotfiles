@@ -21,6 +21,7 @@
   re = reset
   ref = reflog
   s = status
+  pr = !hub browse -- pull/$(git symbolic-ref --short HEAD)
 [ghq]
   root = ~/repos/src
 [github]
