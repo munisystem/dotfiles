@@ -24,3 +24,6 @@ Desktop.ini
 
 # JetBrainsIDE
 .idea
+
+# VS Code
+.vscode
