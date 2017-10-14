@@ -19,8 +19,4 @@ export SAVEHIST=50000
 XDG_CONFIG_HOME=$HOME/.config
 export XDG_CONFIG_HOME
 
-# sbox
-SBOX_ROOT=$HOME/sandbox
-export SBOX_ROOT
-
 LC_LANG=ja.UTF-8
