@@ -6,7 +6,7 @@ export ZDOTDIR
 
 ## autoload
 autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zsh/.zcompdump) ]; then
   compinit
 else
   compinit -C
