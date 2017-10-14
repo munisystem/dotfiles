@@ -13,17 +13,8 @@ eval "$(rbenv init - --no-rehash)"
 export PATH=/usr/local/var/nodebrew/current/bin:$PATH
 export NODEBREW_ROOT=/usr/local/var/nodebrew
 
-## python
-PYENV_ROOT=$HOME/.pyenv
-export PYENV_ROOT
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
-
 ## rust
 export PATH=$HOME/.cargo/bin:$PATH
-
-#export NVM_DIR="$HOME/.nvm"
-#. "/usr/local/opt/nvm/nvm.sh"
 
 ## plugin
 . "$ZDOTDIR/plugin.zsh"
