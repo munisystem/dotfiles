@@ -5,7 +5,12 @@ ZDOTDIR=$HOME/.zsh
 export ZDOTDIR
 
 ## autoload
-autoload -Uz compinit && compinit -u
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
 
 ## path
 export PATH=/usr/local/bin:/usr/bin:/usr/sbin/:/sbin:/bin
