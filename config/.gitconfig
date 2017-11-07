@@ -22,6 +22,7 @@
   ref = reflog
   s = status
   pr = !hub browse -- pull/$(git symbolic-ref --short HEAD)
+  del = !git branch --merged master | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 [ghq]
   root = ~/repos/src
 [github]
