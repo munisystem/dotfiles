@@ -2,7 +2,7 @@
 " view.rc.vim
 
 " Colorscheme
-colorscheme Tomorrow-Night-Bright
+colorscheme iceberg
 set t_Co=256
 
 " Status line
