@@ -109,19 +109,4 @@ repo = 'tpope/vim-fugitive'
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
 repo = 'cocopon/iceberg.vim'
-
-# filetype
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
-[[plugins]]
-repo = 'elzr/vim-json'
-on_ft = 'json'
-hook_add = '''
-  let g:vim_json_syntax_conceal = 0
-'''
