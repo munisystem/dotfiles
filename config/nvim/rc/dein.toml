@@ -8,6 +8,12 @@ build = 'make'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 if = 'has("python3")'
+hook_source = '''
+  if executable('pt')
+    call denite#custom#var('file_rec', 'command', ['pt', '--follow', '--nocolor', '--nogroup', '--hidden', '-g'])
+    call denite#custom#var('grep', 'command', ['pt', '--nogroup', '--nocolor', '--smart-case', '--hidden'])
+  endif
+'''
 hook_add = '''
   nmap <C-s> [denite]
   nnoremap <silent> [denite]f :<C-u>Denite file_rec<CR>
@@ -16,12 +22,7 @@ hook_add = '''
   nnoremap <silent> [denite]c :<C-u>DeniteCursorWord grep<CR>
   nnoremap <silent> [denite]l :<C-u>Denite line<CR>
   nnoremap <silent> [denite]n :<C-u>Denite neoyank<CR>
-  if executable('pt')
-    call denite#custom#var('file_rec', 'command', ['pt', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
-    call denite#custom#var('grep', 'command', ['pt', '--nogroup', '--nocolor', '--smart-case', '--hidden'])
-    call denite#custom#var('grep', 'default_opts', [])
-    call denite#custom#var('grep', 'recursive_opts', [])
-  endif
+  nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
 '''
 
 [[plugins]]
@@ -110,6 +111,9 @@ repo = 'tomtom/tcomment_vim'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
 # filetype
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -121,6 +125,3 @@ on_ft = 'json'
 hook_add = '''
   let g:vim_json_syntax_conceal = 0
 '''
-
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
