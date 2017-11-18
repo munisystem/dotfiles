@@ -12,8 +12,8 @@ hook_add = '''
   nmap <C-s> [denite]
   nnoremap <silent> [denite]f :<C-u>Denite file_rec<CR>
   nnoremap <silent> [denite]m :<C-u>Denite file_mru<CR>
-  nnoremap <silent> [denite]g :<C-u>Denite -auto_preview grep<CR>
-  nnoremap <silent> [denite]c :<C-u>DeniteCursorWord -auto_preview grep<CR>
+  nnoremap <silent> [denite]g :<C-u>Denite grep<CR>
+  nnoremap <silent> [denite]c :<C-u>DeniteCursorWord grep<CR>
   nnoremap <silent> [denite]l :<C-u>Denite line<CR>
   nnoremap <silent> [denite]n :<C-u>Denite neoyank<CR>
   if executable('pt')
