@@ -6,13 +6,9 @@ hook_add = '''
 on_i = 1
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-on_i  = 1
-on_ft = ['snippet']
-
-[[plugins]]
 repo = 'Shougo/neosnippet'
 hook_add = '''
+  let g:neosnippet#enable_completed_snippet = 1
   imap <C-k> <Plug>(neosnippet_expand_or_jump)
   smap <C-k> <Plug>(neosnippet_expand_or_jump)
   xmap <C-k> <Plug>(neosnippet_expand_target)
@@ -21,8 +17,20 @@ hook_add = '''
   endif
 '''
 on_i  = 1
-on_ft = ['snippet']
 depends = ['neosnippet-snippets']
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+on_i  = 1
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+build = 'make'
+on_ft = 'go'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
