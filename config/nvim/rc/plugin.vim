@@ -5,7 +5,7 @@ if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
-  execute 'set runtimepath+=' . fnamemodify(s:dein_repo_dir, ':p')
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
 if dein#load_state(s:dein_dir)
@@ -18,8 +18,6 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:toml, {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-  runt! rc/plugins/*.vim
-
   call dein#end()
   call dein#save_state()
 endif
@@ -27,3 +25,5 @@ endif
 if dein#check_install()
   call dein#install()
 endif
+
+filetype plugin indent on

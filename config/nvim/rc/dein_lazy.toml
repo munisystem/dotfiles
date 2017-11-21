@@ -24,13 +24,19 @@ repo = 'Shougo/neosnippet-snippets'
 on_i  = 1
 
 [[plugins]]
-repo = 'fatih/vim-go'
-on_ft = 'go'
-
-[[plugins]]
 repo = 'zchee/deoplete-go'
 build = 'make'
+hook_source = '''
+  let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
+'''
 on_ft = 'go'
+on_i = 1
+depends = ['deoplete.nvim']
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+on_i = 1
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -39,6 +45,7 @@ on_i = 1
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
+on_i = 1
 
 [[plugins]]
 repo = 'elzr/vim-json'
@@ -46,3 +53,4 @@ on_ft = 'json'
 hook_add = '''
   let g:vim_json_syntax_conceal = 0
 '''
+on_i = 1
