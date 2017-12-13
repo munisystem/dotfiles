@@ -2,7 +2,7 @@
   email = munisystem@gmail.com
   name = Yuichi Saito
 [core]
-  editor = vim
+  editor = nvim
   excludesfile = ~/.gitignore
 [color]
   status = auto
