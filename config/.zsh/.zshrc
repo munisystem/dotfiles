@@ -36,3 +36,6 @@ setopt hist_reduce_blanks
 setopt EXTENDED_HISTORY
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+## kubectl
+source <(kubectl completion zsh)
