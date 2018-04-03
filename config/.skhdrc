@@ -1,0 +1,39 @@
+# focus
+cmd - j : chunkc tiling::window --focus prev
+cmd - k : chunkc tiling::window --focus next
+
+# equalize size of windows
+shift + alt - 0 : chunkc tiling::desktop --equalize
+
+# move window
+shift + cmd - h : chunkc tiling::window --warp west
+shift + cmd - j : chunkc tiling::window --warp south
+shift + cmd - k : chunkc tiling::window --warp north
+shift + cmd - l : chunkc tiling::window --warp east
+
+# increase region size
+shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
+shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
+shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
+shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+
+# toggle desktop offset
+alt - a : chunkc tiling::desktop --toggle offset
+
+# toggle window fullscreen
+alt - f : chunkc tiling::window --toggle fullscreen
+
+# toggle window native fullscreen
+shift + alt - f : chunkc tiling::window --toggle native-fullscreen
+
+# float / unfloat window
+alt - t : chunkc tiling::window --toggle float
+
+# toggle sticky, float and resize to picture-in-picture size
+alt - s : chunkc tiling::window --toggle sticky;\
+          chunkc tiling::window --warp-floating pip-right
+
+# change layout of desktop
+ctrl + alt - a : chunkc tiling::desktop --layout bsp
+ctrl + alt - s : chunkc tiling::desktop --layout monocle
+ctrl + alt - d : chunkc tiling::desktop --layout float
