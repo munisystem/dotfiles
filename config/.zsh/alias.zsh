@@ -1,7 +1,7 @@
 # alias
 
 ## use LSCOLOR
-alias ls="ls -G"
+alias ls='ls -G'
 
 ## nvim
 alias vim='nvim'
@@ -28,7 +28,7 @@ alias ec='envchain'
 alias k='kubectl'
 
 ## kubectx
-alias c="__peco_kubectx"
+alias c='__peco_kubectx'
 
 ## kubens
-alias ns="__peco_kubens"
+alias ns='__peco_kubens'
