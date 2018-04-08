@@ -26,3 +26,6 @@ alias ec='envchain'
 
 ## kubectx
 alias kc="__peco_kubectx"
+
+## kubens
+alias ns="__peco_kubens"

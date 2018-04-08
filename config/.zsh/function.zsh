@@ -27,3 +27,10 @@ __peco_kubectx() {
     kubectx ${context}
   fi
 }
+
+__peco_kubens() {
+  local namespace=$(kubectl get ns -o name | sed 's/namespaces\///g' | peco --query "$LBUFFER")
+  if [[ -n "$namespace" ]]; then
+    kubens ${namespace}
+  fi
+}
