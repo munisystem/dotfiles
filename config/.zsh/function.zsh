@@ -21,5 +21,9 @@ __peco_ghq() {
 }
 zle -N __peco_ghq
 
+__peco_kubectx() {
+  local context=$(kubectl config get-contexts -o name | peco --query "$LBUFFER")
+  if [[ -n "$context" ]]; then
+    print -z "kubectx ${context}"
   fi
 }
