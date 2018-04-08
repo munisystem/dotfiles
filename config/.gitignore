@@ -27,3 +27,6 @@ Desktop.ini
 
 # VS Code
 .vscode
+
+# secrets
+.env
