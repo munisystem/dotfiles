@@ -57,3 +57,9 @@ kssh() {
   [[ -n $container ]] && kubectl exec -it $pod -c $container sh || kubectl exec -it $pod sh
   return $?
 }
+
+kc() {
+  local ctx=$(kubectl config current-context)
+  local ns="$(kubectl config view -o "jsonpath={.contexts[?(@.name == '$ctx')].context.namespace}")"
+  echo "$ctx/$ns"
+}
