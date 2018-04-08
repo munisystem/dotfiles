@@ -34,3 +34,26 @@ __peco_kubens() {
     kubens ${namespace}
   fi
 }
+
+kssh() {
+  local help="$0 -- ssh pod
+
+  * $0 nginx     (kubectl exec -it nginx bash)
+  * $0 app rails (kubectl exec -it nginx -c rails bash)
+"
+  local pod=$1
+  local container=$2
+
+  if [[ -z $pod ]]; then
+    echo $help >&2
+    return 22
+  fi
+
+  [[ -n $container ]] && kubectl exec -it $pod -c $container bash || kubectl exec -it $pod bash
+  if [[ $? -eq 0 ]]; then
+    return 0
+  fi
+
+  [[ -n $container ]] && kubectl exec -it $pod -c $container sh || kubectl exec -it $pod sh
+  return $?
+}
