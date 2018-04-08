@@ -60,6 +60,6 @@ kssh() {
 
 kc() {
   local ctx=$(kubectl config current-context)
-  local ns="$(kubectl config view -o "jsonpath={.contexts[?(@.name == '$ctx')].context.namespace}")"
+  local ns="$(kubectl config view --minify -o "jsonpath={..namespace}")"
   echo "$ctx/$ns"
 }
