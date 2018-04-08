@@ -24,6 +24,9 @@ alias gs='git status'
 ## envchain
 alias ec='envchain'
 
+## kubectl
+alias k='kubectl'
+
 ## kubectx
 alias c="__peco_kubectx"
 
