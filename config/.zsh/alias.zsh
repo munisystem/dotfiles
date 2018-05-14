@@ -21,6 +21,9 @@ alias grs='git reset'
 alias grf='git reflog'
 alias gs='git status'
 
+### fzf
+alias gcb='__fzf_checkout_branch'
+
 ## envchain
 alias ec='envchain'
 

@@ -63,3 +63,10 @@ kc() {
   local ns="$(kubectl config view --minify -o "jsonpath={..namespace}")"
   echo "$ctx/$ns"
 }
+
+__fzf_checkout_branch() {
+  local branch=$(git branch --all | grep -v HEAD | fzf --reverse)
+  if [[ -n "$branch" ]]; then
+    git checkout `echo $branch | sed "s/.* //" | sed "s#remotes/[^/]*/##"`
+  fi
+}
