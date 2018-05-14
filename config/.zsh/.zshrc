@@ -33,7 +33,8 @@ setopt hist_ignore_all_dups
 setopt hist_no_store
 setopt hist_ignore_space
 setopt hist_reduce_blanks
-setopt EXTENDED_HISTORY
+setopt extended_history
+setopt share_history 
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
