@@ -21,7 +21,6 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 
 ## NVIM
-XDG_CONFIG_HOME=$HOME/.config
-export XDG_CONFIG_HOME
+export XDG_CONFIG_HOME=$HOME/.config
 
-LC_LANG=ja.UTF-8
+export LC_LANG=ja.UTF-8
