@@ -1,35 +1,35 @@
 # function
 
-__peco_select_history() {
+__fzf_select_history() {
   local tac=${commands[tac]:-"tail -r"}
 
   BUFFER=$(\history -n 1 | \
     eval $tac | \
-    peco --query "$LBUFFER")
+    fzf --reverse)
     CURSOR=$#BUFFER
     zle reset-prompt
 }
-zle -N __peco_select_history
+zle -N __fzf_select_history
 
-__peco_ghq() {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+__fzf_ghq() {
+  local selected_dir=$(ghq list -p | fzf --reverse)
   if [[ -n "$selected_dir" ]]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
   zle reset-prompt
 }
-zle -N __peco_ghq
+zle -N __fzf_ghq
 
-__peco_kubectx() {
-  local context=$(kubectl config get-contexts -o name | peco --query "$LBUFFER")
+__fzf_kubectx() {
+  local context=$(kubectl config get-contexts -o name | fzf --reverse)
   if [[ -n "$context" ]]; then
     kubectx ${context}
   fi
 }
 
-__peco_kubens() {
-  local namespace=$(kubectl get ns -o name | sed 's/namespaces\///g' | peco --query "$LBUFFER")
+__fzf_kubens() {
+  local namespace=$(kubectl get ns -o name | sed 's/namespaces\///g' | fzf --reverse)
   if [[ -n "$namespace" ]]; then
     kubens ${namespace}
   fi

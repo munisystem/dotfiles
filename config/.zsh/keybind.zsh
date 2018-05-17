@@ -4,6 +4,6 @@
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
 
-## peco
-bindkey '^R' __peco_select_history
-bindkey '^]''r' __peco_ghq
+## fzf
+bindkey '^R' __fzf_select_history
+bindkey '^]''r' __fzf_ghq
