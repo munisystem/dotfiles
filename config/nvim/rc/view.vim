@@ -2,8 +2,12 @@
 " view.rc.vim
 
 " Colorscheme
+if (has("termguicolors"))
+ set termguicolors
+endif
+set termguicolors
+syntax enable
 colorscheme iceberg
-set t_Co=256
 
 " Status line
 set laststatus=2
