@@ -46,9 +46,6 @@ repo = 'vim-scripts/Align'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'chriskempson/vim-tomorrow-theme'
-
-[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
   function! LightLineModified()
