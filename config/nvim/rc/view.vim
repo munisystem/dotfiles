@@ -3,9 +3,8 @@
 
 " Colorscheme
 if (has("termguicolors"))
- set termguicolors
+  set termguicolors
 endif
-set termguicolors
 syntax enable
 colorscheme iceberg
 
