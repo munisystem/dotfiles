@@ -29,7 +29,7 @@ __fzf_kubectx() {
 }
 
 __fzf_kubens() {
-  local namespace=$(kubectl get ns -o name | sed 's/namespaces\///g' | fzf --reverse)
+  local namespace=$(kubectl get ns -o name | sed 's/namespace\///g' | fzf --reverse)
   if [[ -n "$namespace" ]]; then
     kubens ${namespace}
   fi
