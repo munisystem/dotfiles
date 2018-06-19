@@ -23,4 +23,5 @@ export SAVEHIST=100000
 ## NVIM
 export XDG_CONFIG_HOME=$HOME/.config
 
-export LC_LANG=ja.UTF-8
+export LANG=en_US.UTF-8
+export LC_LANG=en_US.UTF-8
