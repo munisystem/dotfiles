@@ -1,9 +1,13 @@
 # Initialize
 
+## internal tools
+export PATH=$HOME/.wantedly/bin:$PATH
+
 ## Golang
 GOPATH=$HOME/repos
 export GOPATH
 export PATH=$GOPATH/bin:$PATH
+export GO111MODULE=on
 
 ## ruby
 export PATH=$HOME/.rbenv/shims:$PATH
@@ -15,6 +19,9 @@ export NODEBREW_ROOT=/usr/local/var/nodebrew
 
 ## rust
 export PATH=$HOME/.cargo/bin:$PATH
+
+## kubebuilder
+export PATH=$PATH:/usr/local/kubebuilder/bin
 
 ## plugin
 . "$ZDOTDIR/plugin.zsh"
@@ -39,4 +46,4 @@ setopt share_history
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 ## kubectl
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)

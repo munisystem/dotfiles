@@ -23,8 +23,6 @@ set formatoptions=q
 set undofile
 set undodir=$XDG_CONFIG_HOME/nvim/undo
 
-" Diff
-set nodiff
 
 " Case
 set ignorecase
@@ -41,3 +39,14 @@ set foldmethod=marker
 " fast scroll
 set lazyredraw
 set ttyfast
+
+set ttimeout
+set ttimeoutlen=50
+
+if has('conceal')
+  set conceallevel=0
+endif
+
+" Hardway
+" noremap h <NOP>
+" noremap l <NOP>

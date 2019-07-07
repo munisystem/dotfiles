@@ -1,54 +1,18 @@
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-  let g:deoplete#enable_at_startup = 1
-'''
-on_i = 1
-
-[[plugins]]
-repo = 'Shougo/neosnippet'
-hook_add = '''
-  let g:neosnippet#enable_completed_snippet = 1
-  imap <C-k> <Plug>(neosnippet_expand_or_jump)
-  smap <C-k> <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k> <Plug>(neosnippet_expand_target)
-  if has('conceal')
-    set conceallevel=2 concealcursor=niv
-  endif
-'''
-on_i  = 1
-depends = ['neosnippet-snippets']
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-on_i  = 1
-
-[[plugins]]
-repo = 'zchee/deoplete-go'
-build = 'make'
-hook_source = '''
-  let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
-'''
-on_ft = 'go'
-on_i = 1
-depends = ['deoplete.nvim']
-
-[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
-on_i = 1
 hook_source = '''
   let g:go_fmt_command = "goimports"
+  let g:go_def_mapping_enabled = 0
+  let g:go_doc_keywordprg_enabled = 0
 '''
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
-on_i = 1
 
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
-on_i = 1
 
 [[plugins]]
 repo = 'elzr/vim-json'
@@ -56,4 +20,11 @@ on_ft = 'json'
 hook_add = '''
   let g:vim_json_syntax_conceal = 0
 '''
-on_i = 1
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = 'md'
+hook_add = '''
+  let g:vim_markdown_conceal = 0
+  let g:vim_markdown_folding_disabled = 1
+'''
