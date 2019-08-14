@@ -1,4 +1,5 @@
 # keybind
+bindkey -e
 
 ## history completion
 bindkey '^P' history-search-backward
