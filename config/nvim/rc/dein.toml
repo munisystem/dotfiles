@@ -54,27 +54,8 @@ hook_add = '''
     endif
   endfunction
 
-  function! LightLineReadonly()
-    if &filetype == "help"
-      return ""
-    elseif &readonly
-      return "⭤"
-    else
-      return ""
-    endif
-  endfunction
-
-  function! LightLineFugitive()
-    if exists("*fugitive#head")
-      let _ = fugitive#head()
-      return strlen(_) ? '⭠ '._ : ''
-    endif
-    return ''
-  endfunction
-
   function! LightLineFilename()
-    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-         \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+    return ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
          \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
   endfunction
 
@@ -82,16 +63,12 @@ hook_add = '''
         \ 'colorscheme': 'wombat',
         \ 'active': {
         \   'left': [  [ 'mode', 'paste' ],
-        \              [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+        \              [ 'filename', 'modified' ] ]
         \ },
         \ 'component_function': {
-        \   'fugitive': 'LightLineFugitive',
-        \   'readonly': 'LightLineReadonly',
         \   'modified': 'LightLineModified',
         \   'filename': 'LightLineFilename'
-        \ },
-        \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
-        \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
+        \ }
         \ }
 '''
 
