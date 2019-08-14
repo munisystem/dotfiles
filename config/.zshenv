@@ -25,3 +25,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export LANG=en_US.UTF-8
 export LC_LANG=en_US.UTF-8
+
+## Default Editor
+export EDITOR=/usr/local/bin/nvim
