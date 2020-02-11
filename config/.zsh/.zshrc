@@ -47,3 +47,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 ## kubectl
 # source <(kubectl completion zsh)
+
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
