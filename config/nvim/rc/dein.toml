@@ -125,6 +125,14 @@ hook_add = '''
       au FileType go nnoremap <buffer><silent> gd :<C-u>LspDefinition<CR>
      augroup END
   endif
+  if executable('solargraph')
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'solargraph',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+          \ 'initialization_options': {"diagnostics": "true"},
+          \ 'whitelist': ['ruby'],
+          \ })
+  endif
   let g:lsp_async_completion = 1
 '''
 
