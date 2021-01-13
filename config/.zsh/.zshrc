@@ -14,14 +14,18 @@ export PATH=$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init - --no-rehash)"
 
 ## node
-export PATH=/usr/local/var/nodebrew/current/bin:$PATH
-export NODEBREW_ROOT=/usr/local/var/nodebrew
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 ## rust
 export PATH=$HOME/.cargo/bin:$PATH
 
-## kubebuilder
+## Kubernetes
 export PATH=$PATH:/usr/local/kubebuilder/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+## asdf-vm
+. $(brew --prefix asdf)/asdf.sh
 
 ## plugin
 . "$ZDOTDIR/plugin.zsh"
@@ -50,4 +54,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
+export GOENV_DISABLE_GOPATH=1
 eval "$(goenv init -)"

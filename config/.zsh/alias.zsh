@@ -20,6 +20,7 @@ alias grb='git rebase'
 alias grs='git reset'
 alias grf='git reflog'
 alias gs='git status'
+alias gsw='git switch'
 
 ### fzf
 alias gcb='__fzf_checkout_branch'

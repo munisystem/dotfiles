@@ -21,6 +21,7 @@
   re = reset
   ref = reflog
   s = status
+  sw = switch
   pr = !hub browse -- pull/$(git symbolic-ref --short HEAD)
   del = !git branch --merged master | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 [ghq]
@@ -28,3 +29,5 @@
 [github]
   user = munisystem
   privatekey = /Users/muni/.ssh/keys/github
+[url "git@github.com:"]
+	insteadOf = https://github.com/

@@ -15,6 +15,11 @@ fi
 ## path
 export PATH=/usr/local/bin:/usr/bin:/usr/sbin/:/sbin:/bin
 
+## OpenSSL
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
+
 ## history
 export HISTFILE="$HOME"/.zsh_history
 export HISTSIZE=100000
