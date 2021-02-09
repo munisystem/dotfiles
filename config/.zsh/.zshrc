@@ -53,6 +53,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## kubectl
 # source <(kubectl completion zsh)
 
+## gcloud
+
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 export GOENV_DISABLE_GOPATH=1
