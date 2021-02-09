@@ -30,9 +30,3 @@ alias ec='envchain'
 
 ## kubectl
 alias k='kubectl'
-
-## kubectx
-alias c='__fzf_kubectx'
-
-## kubens
-alias ns='__fzf_kubens'

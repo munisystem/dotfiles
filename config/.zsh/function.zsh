@@ -21,20 +21,6 @@ __fzf_ghq() {
 }
 zle -N __fzf_ghq
 
-__fzf_kubectx() {
-  local context=$(kubectl config get-contexts -o name | fzf --reverse)
-  if [[ -n "$context" ]]; then
-    kubectx ${context}
-  fi
-}
-
-__fzf_kubens() {
-  local namespace=$(kubectl get ns -o name | sed 's/namespace\///g' | fzf --reverse)
-  if [[ -n "$namespace" ]]; then
-    kubens ${namespace}
-  fi
-}
-
 kssh() {
   local help="$0 -- ssh pod
 
