@@ -24,10 +24,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## internal tools
 export PATH=$HOME/.wantedly/bin:$PATH
 
-## anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - --no-rehash)"
-
 ## Golang
 export GOPATH=$HOME/repos
 export PATH=$GOPATH/bin:$PATH
