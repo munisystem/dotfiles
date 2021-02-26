@@ -32,7 +32,6 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 ## Kubernetes
-source <(kubectl completion zsh)
 export PATH=$PATH:/usr/local/kubebuilder/bin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 

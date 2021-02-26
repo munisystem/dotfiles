@@ -56,3 +56,9 @@ __fzf_checkout_branch() {
     git checkout `echo $branch | sed "s/.* //" | sed "s#remotes/[^/]*/##"`
   fi
 }
+
+kubectl() {
+  unfunction "$0"
+  source <(kubectl completion zsh)
+  $0 "$@"
+}
