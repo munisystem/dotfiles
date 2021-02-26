@@ -7,9 +7,14 @@ source "$HOME/.zsh/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit light 'zsh-users/zsh-autosuggestions'
-zinit light "zsh-users/zsh-completions"
-zinit light "zsh-users/zsh-syntax-highlighting"
-
 zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
+
+zinit wait lucid light-mode for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions \
+  blockf atpull'zinit creinstall -q .' \
+      zsh-users/zsh-completions
+

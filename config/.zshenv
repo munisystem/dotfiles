@@ -1,38 +1,35 @@
-# environment
+export ZDOTDIR=$HOME/.zsh
 
-## zsh config directory
-ZDOTDIR=$HOME/.zsh
-export ZDOTDIR
-
-## autoload
-autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zsh/.zcompdump) ]; then
-  compinit
-else
-  compinit -C
-fi
-
-## path
-export PATH=/usr/local/bin:/usr/bin:/usr/sbin/:/sbin:/bin
-
-## OpenSSL
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
-
-## history
-export HISTFILE="$HOME"/.zsh_history
-export HISTSIZE=100000
-export SAVEHIST=100000
-
-## NVIM
-export XDG_CONFIG_HOME=$HOME/.config
-
+# language
 export LANG=en_US.UTF-8
 export LC_LANG=en_US.UTF-8
 
-## Default Editor
+# editor
 export EDITOR=/usr/local/bin/nvim
 
-## direnv
-eval "$(direnv hook zsh)"
+# local path
+export PATH=/usr/local/bin:$PATH
+
+# XDG Base Directory
+export XDG_CONFIG_HOME=$HOME/.config
+
+# tools for Wantedly, Inc.
+export PATH=$HOME/.wantedly/bin:$PATH
+
+## Go
+export GOPATH=$HOME/repos
+export PATH=$GOPATH/bin:$PATH
+
+## Rust
+export PATH=$HOME/.cargo/bin:$PATH
+
+## Kubernetes
+export PATH=$PATH:/usr/local/kubebuilder/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+## asdf-vm
+. /usr/local/opt/asdf/asdf.sh
+
+# google-cloud-sdk
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
