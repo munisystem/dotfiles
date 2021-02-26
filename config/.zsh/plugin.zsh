@@ -1,12 +1,15 @@
-# plugin
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+# Added by Zinit's installer
+if [[ ! -f $HOME/.zsh/.zinit/bin/zinit.zsh ]]; then
+    command mkdir -p "$HOME/.zsh/.zinit" && command chmod g-rwX "$HOME/.zsh/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zsh/.zinit/bin" 
+fi
+source "$HOME/.zsh/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-zplug 'zsh-users/zsh-autosuggestions', defer:1
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zinit light 'zsh-users/zsh-autosuggestions'
+zinit light "zsh-users/zsh-completions"
+zinit light "zsh-users/zsh-syntax-highlighting"
 
-zplug "mafredri/zsh-async", "on:sindresorhus/pure"
-zplug "sindresorhus/pure"
-
-zplug load
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
