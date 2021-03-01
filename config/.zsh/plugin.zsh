@@ -7,9 +7,6 @@ source "$HOME/.zsh/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit ice pick"async.zsh" src"pure.zsh"
-zinit light sindresorhus/pure
-
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
       zdharma/fast-syntax-highlighting \
