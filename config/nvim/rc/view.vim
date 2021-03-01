@@ -6,7 +6,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 syntax enable
-colorscheme iceberg
+colorscheme hybrid_reverse
 
 " Status line
 set laststatus=2

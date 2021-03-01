@@ -82,7 +82,7 @@ repo = 'airblade/vim-gitgutter'
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
-repo = 'cocopon/iceberg.vim'
+repo = 'kristijanhusak/vim-hybrid-material'
 
 # [[plugins]]
 # repo = 'w0rp/ale'
