@@ -52,6 +52,7 @@ hook_add = '''
       \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
       \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
       \ 'highlight_filter_background': 'DeniteFilter',
+      \ 'prompt': '> ',
       \ }
   call denite#custom#option('default', s:denite_default_options)
 
