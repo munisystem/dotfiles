@@ -9,8 +9,10 @@ build = 'make'
 repo = 'Shougo/denite.nvim'
 hook_add = '''
   nmap ,f :<C-u>Denite file/rec<CR>
-  nmap <silent> ,g :<C-u>Denite grep<CR>
-  nmap <silent> ,cg :<C-u>DeniteCursorWord grep<CR><C-R><C-W><CR>
+  nmap <silent> ,g :<C-u>DeniteProjectDir grep<CR>
+  nmap <silent> ,c :<C-u>DeniteProjectDir grep:::<C-R><C-W><CR>
+  nmap <silent> ,G :<C-u>Denite grep<C-R>
+  nmap <silent> ,C :<C-u>Denite grep:::<C-R><C-W><CR>
   nmap <silent> ,b :<C-u>Denite buffer<CR>
   nmap <silent> ,l :<C-u>Denite line<CR>
 
