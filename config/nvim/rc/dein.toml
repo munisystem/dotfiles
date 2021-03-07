@@ -45,11 +45,16 @@ hook_add = '''
   let s:denite_win_height_percent = 0.7
   let s:denite_default_options = {
       \ 'split': 'floating',
-      \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
+      \ 'auto_action': 'preview',
+      \ 'winwidth': float2nr(&columns * s:denite_win_width_percent / 2),
       \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
       \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
       \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
       \ 'highlight_filter_background': 'DeniteFilter',
+      \ 'floating_preview': v:true,
+      \ 'vertical_preview': v:true,
+      \ 'preview_width': float2nr(&columns * s:denite_win_width_percent / 2),
+      \ 'preview_height': float2nr(&lines * s:denite_win_height_percent),
       \ }
   call denite#custom#option('default', s:denite_default_options)
 
