@@ -16,6 +16,6 @@
 [github]
   user = munisystem
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 [commit]
   gpgsign = true
