@@ -6,7 +6,9 @@ if (has("termguicolors"))
   set termguicolors
 endif
 syntax enable
-colorscheme hybrid_reverse
+colorscheme NeoSolarized
+set background=dark
+
 
 " Status line
 set laststatus=2

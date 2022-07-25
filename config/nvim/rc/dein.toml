@@ -178,3 +178,5 @@ hook_add = '''
   let g:lsp_async_completion = 1
 '''
 
+[[plugins]]
+repo = 'overcache/NeoSolarized'
