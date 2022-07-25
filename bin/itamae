@@ -1,12 +1,12 @@
 #!/bin/sh
 
-version="1.5.1"
+version="1.12.9"
 
-bin="mitamae-x86_64-$(uname | tr "[A-Z]" "[a-z]")"
+bin="mitamae-aarch64-$(uname | tr "[A-Z]" "[a-z]")"
 
 itamae="bin/${bin}-${version}"
 if ! [ -f "${itamae}" ]; then
-  url="https://github.com/k0kubun/mitamae/releases/download/v${version}/${bin}.tar.gz"
+  url="https://github.com/itamae-kitchen/mitamae/releases/download/v${version}/${bin}.tar.gz"
   curl -L $url > "/tmp/${bin}.tar.gz";
   tar zxvf "/tmp/${bin}.tar.gz"
   mv $bin $itamae
