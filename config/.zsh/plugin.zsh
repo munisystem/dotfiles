@@ -1,17 +1,17 @@
-# Added by Zinit's installer
-if [[ ! -f $HOME/.zsh/.zinit/bin/zinit.zsh ]]; then
-    command mkdir -p "$HOME/.zsh/.zinit" && command chmod g-rwX "$HOME/.zsh/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zsh/.zinit/bin" 
+zi_home="${HOME}/.zi"
+if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
+    command mkdir -p $zi_home
+    command git clone https://github.com/z-shell/zi.git "${zi_home}/bin" 
 fi
-source "$HOME/.zsh/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+source "${zi_home}/bin/zi.zsh"
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
 
-zinit wait lucid light-mode for \
+zi wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
       zdharma/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions \
-  blockf atpull'zinit creinstall -q .' \
+  blockf atpull'zi creinstall -q .' \
       zsh-users/zsh-completions
 

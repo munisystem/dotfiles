@@ -12,7 +12,7 @@ __fzf_select_history() {
 zle -N __fzf_select_history
 
 __fzf_ghq() {
-  local selected_dir=$(ghq list -p | fzf --reverse)
+  local selected_dir=$(ghq list -p | peco --reverse)
   if [[ -n "$selected_dir" ]]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
@@ -61,4 +61,9 @@ kubectl() {
   unfunction "$0"
   source <(kubectl completion zsh)
   $0 "$@"
+}
+
+r() {
+  declare -r DIR="$(ghq list >/dev/null | peco)"
+  [[ -n "${DIR}" ]] && cd "$(ghq root)/${DIR}"
 }
