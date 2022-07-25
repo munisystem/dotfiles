@@ -10,20 +10,6 @@
   branch = auto
   interactive = auto
   grep = auto
-[alias]
-  i = init
-  a = add
-  c = commit
-  p = push
-  b = branch
-  co = checkout
-  r = rebase
-  re = reset
-  ref = reflog
-  s = status
-  sw = switch
-  pr = !hub browse -- pull/$(git symbolic-ref --short HEAD)
-  del = !git branch --merged master | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 [ghq]
   root = ~/repos/src
 [github]
