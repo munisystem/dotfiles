@@ -1,6 +1,7 @@
 [user]
   email = munisystem@gmail.com
   name = Yuichi Saito
+  signingkey = 0A1BACF847A81EA5
 [core]
   editor = nvim
   excludesfile = ~/.gitignore
@@ -16,3 +17,5 @@
   user = munisystem
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[commit]
+  gpgsign = true
