@@ -5,7 +5,7 @@ export LANG=en_US.UTF-8
 export LC_LANG=en_US.UTF-8
 
 # editor
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/opt/homebrew/bin/nvim
 
 # XDG Base Directory
 export XDG_CONFIG_HOME=$HOME/.config
