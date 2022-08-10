@@ -13,7 +13,11 @@ export XDG_CONFIG_HOME=$HOME/.config
 setopt no_global_rcs
 export PATH=/usr/local/bin:$PATH
 
-## asdf-vm
+# asdf-vm
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+# Homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
+
+# Google Cloud SDK
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
