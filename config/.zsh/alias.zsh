@@ -30,3 +30,9 @@ alias ec='envchain'
 
 ## kubectl
 alias k='kubectl'
+
+if [[ `uname` == "Darwin" ]]; then
+  if type exa > /dev/null; then
+    alias ls='exa --icons'
+  fi
+fi
