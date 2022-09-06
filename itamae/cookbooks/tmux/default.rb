@@ -9,4 +9,4 @@ execute "#{ENV["HOME"]}/.tmux/plugins/tpm/bin/install_plugins" do
   action :nothing
 end
 
-dotfiles '.tmux.conf'
+dotfiles '.config/tmux'
