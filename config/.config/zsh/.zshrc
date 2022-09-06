@@ -1,31 +1,22 @@
-# plugins
-. "$ZDOTDIR/plugin.zsh"
-
-# functions
-. "$ZDOTDIR/function.zsh"
-
-# alias
-. "$ZDOTDIR/alias.zsh"
-
-# keybinds
-. "$ZDOTDIR/keybind.zsh"
-
-# prompt
+. "$ZDOTDIR/plugins.zsh"
+. "$ZDOTDIR/functions.zsh"
+. "$ZDOTDIR/aliases.zsh"
+. "$ZDOTDIR/keybinds.zsh"
 . "$ZDOTDIR/prompt.zsh"
 
-# history
+# Command history
+HISTSIZE=65535
+SAVEHIST=65535
 setopt hist_ignore_all_dups
 setopt hist_no_store
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt extended_history
 setopt share_history
+setopt append_history
 
+# Completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z} r:|[-_.]=**'
-
-# Setup Fig
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
 
 # OSC 133
 _prompt_executing=""
@@ -53,3 +44,7 @@ function __prompt_preexec() {
 }
 preexec_functions+=(__prompt_preexec)
 precmd_functions+=(__prompt_precmd)
+
+# Fig
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"

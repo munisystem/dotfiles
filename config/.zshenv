@@ -1,14 +1,15 @@
-export ZDOTDIR=$HOME/.zsh
+# XDG Based directory
+export XDG_CONFIG_HOME=$HOME/.config
 
-# language
+# Use XDG Based directory in zsh
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+
+# Language
 export LANG=en_US.UTF-8
 export LC_LANG=en_US.UTF-8
 
-# editor
+# Default editor
 export EDITOR=/opt/homebrew/bin/nvim
-
-# XDG Base Directory
-export XDG_CONFIG_HOME=$HOME/.config
 
 setopt no_global_rcs
 export PATH=/usr/local/bin:$PATH
@@ -19,9 +20,9 @@ export PATH=/usr/local/bin:$PATH
 # Homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
 
-# Google Cloud SDK
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-
 # Go
 [ -n "$(go env GOBIN)" ] && export PATH="$(go env GOBIN):${PATH}"
 [ -n "$(go env GOPATH)" ] && export PATH="$(go env GOPATH)/bin:${PATH}"
+
+# Google Cloud SDK
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"

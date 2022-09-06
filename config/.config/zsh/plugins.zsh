@@ -12,6 +12,8 @@ zi wait lucid light-mode for \
       zdharma/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions \
-  blockf atpull'zi creinstall -q .' \
-      zsh-users/zsh-completions
+  blockf \
+    zsh-users/zsh-completions
 
+zi light spaceship-prompt/spaceship-prompt
+zi light agkozak/zsh-z
