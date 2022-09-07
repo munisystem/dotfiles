@@ -1,8 +1,8 @@
-dotfiles
-=====
+# dotfiles
 
 ## Installation
 
 ```sh
-curl -sL http://dots.munisystem.net | sh
+git clone git@github.com:munisystem/dotfiles.git
+./install.sh
 ```
