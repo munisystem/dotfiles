@@ -51,7 +51,7 @@ map.set('n', '<leader>b', function()
 end)
 
 map.set('n', '<leader>fg', function()
-  telescope.live_grep()
+  builtin.live_grep()
 end)
 
 map.set('n', '<leader>fb', function()

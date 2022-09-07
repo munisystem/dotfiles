@@ -19,10 +19,13 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
+  use 'RRethy/nvim-treesitter-endwise'
+  use 'andymass/vim-matchup'
   use {
     'kylechui/nvim-surround',
     tag = "*",
   }
+  use 'lukas-reineke/indent-blankline.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use {
     'nvim-telescope/telescope.nvim',
@@ -30,6 +33,7 @@ return packer.startup(function(use)
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'windwp/nvim-autopairs'
+  use 'numToStr/Comment.nvim'
   use {
     'akinsho/bufferline.nvim',
     tag = "v2.*",

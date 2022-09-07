@@ -10,9 +10,11 @@ vim.cmd[[
   \ 'coc-html',
   \ 'coc-go',
   \ 'coc-copilot',
+  \ 'coc-highlight',
   \ ]
 
   autocmd VimEnter * hi CocMenuSel guibg=#274964
+  autocmd CursorHold * silent call CocActionAsync('highlight')
 
   inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
