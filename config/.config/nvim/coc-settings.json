@@ -12,7 +12,7 @@
   },
   "suggest.completionItemKindLabels": {
     "function": "\uf794",
-    "method":"\uf6a6",
+    "method": "\uf6a6",
     "variable": "\uf71b",
     "constant": "\uf8ff",
     "struct": "\ufb44",

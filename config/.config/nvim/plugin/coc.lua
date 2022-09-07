@@ -11,6 +11,7 @@ vim.cmd[[
   \ 'coc-go',
   \ 'coc-copilot',
   \ 'coc-highlight',
+  \ 'coc-lua',
   \ ]
 
   autocmd VimEnter * hi CocMenuSel guibg=#274964

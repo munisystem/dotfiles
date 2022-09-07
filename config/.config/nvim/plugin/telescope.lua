@@ -11,24 +11,25 @@ local fb = require "telescope".extensions.file_browser
 
 telescope.setup({
   defaults = {
+    respect_gitignore = false,
+    initial_mode = "insert",
     mappings = {
       n = {
-        ["q"] = actions.close
+        ["q"] = actions.close,
+        ["/"] = function()
+          vim.cmd('startinsert')
+        end
       }
     }
   },
   extensions = {
     file_browser = {
       hijack_netrw = true,
-      respect_gitignore = false,
-      initial_mode = "normal",
       grouped = true,
+      hidden = true,
       mappings = {
         n = {
           ["n"] = fb.actions.create,
-          ["/"] = function()
-            vim.cmd('startinsert')
-          end
         }
       }
     }
