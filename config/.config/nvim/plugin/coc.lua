@@ -33,4 +33,6 @@ vim.cmd[[
       call feedkeys('K', 'in')
     endif
   endfunction
+
+  autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 ]]

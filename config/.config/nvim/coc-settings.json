@@ -3,8 +3,13 @@
     "typescript",
     "typescript.tsx",
     "javascript",
-    "javascript.jsx"
+    "javascript.jsx",
+    "json",
+    "go"
   ],
+  "go.goplsOptions": {
+    "completeUnimported": true
+  },
   "suggest.completionItemKindLabels": {
     "function": "\uf794",
     "method":"\uf6a6",
