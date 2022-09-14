@@ -20,6 +20,7 @@ opt.smartcase = true
 opt.wrapscan = true
 opt.inccommand = 'split'
 opt.termguicolors = true
+opt.path:append { '**' } -- enable search in subdirectories
 
 if vim.fn.has('macunix') == 1 then
   opt.clipboard:append { 'unnamedplus' }
