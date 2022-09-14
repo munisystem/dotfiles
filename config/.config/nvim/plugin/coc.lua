@@ -11,14 +11,11 @@ vim.cmd[[
   \ 'coc-go',
   \ 'coc-copilot',
   \ 'coc-highlight',
-  \ 'coc-lua',
+  \ 'coc-lua'
   \ ]
 
   autocmd VimEnter * hi CocMenuSel guibg=#274964
   autocmd CursorHold * silent call CocActionAsync('highlight')
-
-  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
   nmap <silent> gd <Plug>(coc-definition)
   nmap <silent> gy <Plug>(coc-type-definition)
