@@ -1,9 +1,13 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
     "typescript",
-    "typescript.tsx",
     "javascript",
-    "javascript.jsx",
+    "typescriptreact",
+    "javascriptreact",
+    "json",
+    "go"
+  ],
+  "prettier.disableLanguages": [
     "json",
     "go"
   ],
