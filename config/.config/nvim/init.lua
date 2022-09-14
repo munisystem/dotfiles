@@ -18,7 +18,7 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 opt.wrapscan = true
-opt.inccommand = split
+opt.inccommand = 'split'
 opt.termguicolors = true
 
 if vim.fn.has('macunix') == 1 then
