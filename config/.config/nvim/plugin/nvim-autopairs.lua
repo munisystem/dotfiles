@@ -14,7 +14,7 @@ MUtils.completion_confirm=function()
   if vim.fn["coc#pum#visible"]() ~= 0  then
     return vim.fn["coc#pum#confirm"]()
   else
-    return npairs.autopairs_cr()
+    return autopairs.autopairs_cr()
   end
 end
 
