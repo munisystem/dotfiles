@@ -1,3 +1,6 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 . "$ZDOTDIR/plugins.zsh"
 . "$ZDOTDIR/functions.zsh"
 . "$ZDOTDIR/aliases.zsh"
@@ -45,6 +48,5 @@ function __prompt_preexec() {
 preexec_functions+=(__prompt_preexec)
 precmd_functions+=(__prompt_precmd)
 
-# Fig
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
