@@ -88,6 +88,7 @@ lspconfig.sumneko_lua.setup {
   }
 }
 
+-- Import missing packages using gopls
 -- cf. https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports
 local function goimports(wait_ms)
   return function()
@@ -110,4 +111,8 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   callback = goimports()
 })
 
--- vim.opt.completeopt = "menu,menuone,noselect"
+-- Format code on save
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.go' },
+  callback = vim.lsp.buf.formatting
+})
