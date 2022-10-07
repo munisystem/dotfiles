@@ -23,6 +23,9 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # Kubernetes
 export PATH="${PATH}:${HOME}/.krew/bin"
 
+## Use new authentication method in GKE
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # Go
 [ -n "$(go env GOBIN)" ] && export PATH="$(go env GOBIN):${PATH}"
 [ -n "$(go env GOPATH)" ] && export PATH="$(go env GOPATH)/bin:${PATH}"
