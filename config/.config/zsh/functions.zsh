@@ -1,9 +1,6 @@
 __fzf_select_history() {
-  local tac=${commands[tac]:-"tail -r"}
-
-  BUFFER=$(\history -n 1 | \
-    eval $tac | \
-    fzf --reverse)
+  BUFFER=$(\history -n -r 1 | \
+    fzf --no-sort --reverse)
     CURSOR=$#BUFFER
     zle reset-prompt
 }
