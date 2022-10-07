@@ -25,6 +25,15 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local util = require('lspconfig/util')
 
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+  }
+)
+
 -- Javascript / Typescript configurations
 lspconfig.tsserver.setup {
   on_attach = on_attach,
@@ -65,7 +74,8 @@ lspconfig.gopls.setup {
   settings = {
     gopls = {
       analyses = {
-        unusedparams = true
+        unusedparams = true,
+        shadow = true
       },
       staticcheck = true
     }
