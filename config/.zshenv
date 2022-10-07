@@ -20,6 +20,9 @@ export PATH=/usr/local/bin:$PATH
 # Homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
 
+# Kubernetes
+export PATH="${PATH}:${HOME}/.krew/bin"
+
 # Go
 [ -n "$(go env GOBIN)" ] && export PATH="$(go env GOBIN):${PATH}"
 [ -n "$(go env GOPATH)" ] && export PATH="$(go env GOPATH)/bin:${PATH}"
