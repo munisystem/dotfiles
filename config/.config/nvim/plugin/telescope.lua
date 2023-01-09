@@ -52,7 +52,9 @@ map.set('n', '<leader>b', function()
 end)
 
 map.set('n', '<leader>fg', function()
-  builtin.live_grep()
+  builtin.live_grep({
+    file_ignore_patterns = { 'node_modules/.*', '.git/.*' }
+  })
 end)
 
 map.set('n', '<leader>fb', function()
