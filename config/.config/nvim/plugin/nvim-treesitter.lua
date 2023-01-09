@@ -14,7 +14,8 @@ treesitter.setup{
     'tsx',
     'typescript',
     'html',
-    'css'
+    'css',
+    'astro'
   },
   highlight = {
     enable = true

@@ -61,6 +61,16 @@ lspconfig.eslint.setup {
   capabilities = capabilities
 }
 
+lspconfig.astro.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+lspconfig.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
 -- Go configurations
 lspconfig.gopls.setup {
   on_attach = on_attach,

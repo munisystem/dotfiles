@@ -11,7 +11,10 @@ lspconfig.setup({
     'lua-language-server',
     'gopls',
     -- 'tsserver', Use typescript-language-server instead of tsserver.
+    'typescript-language-server',
     'eslint',
+    'astro-language-server',
+    'tailwindcss-language-server',
     'dockerls'
   }
 })
