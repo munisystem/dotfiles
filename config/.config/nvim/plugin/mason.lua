@@ -8,13 +8,13 @@ if (not no_errors) then return end
 
 lspconfig.setup({
   ensure_installed = {
-    'lua-language-server',
+    'sumneko_lua',
     'gopls',
     -- 'tsserver', Use typescript-language-server instead of tsserver.
-    'typescript-language-server',
+    'tsserver',
     'eslint',
-    'astro-language-server',
-    'tailwindcss-language-server',
+    'astro',
+    'tailwindcss',
     'dockerls'
   }
 })
