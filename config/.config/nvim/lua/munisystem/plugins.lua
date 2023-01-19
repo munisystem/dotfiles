@@ -19,6 +19,7 @@ require("lazy").setup({
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lsp-signature-help', -- show function signatures duaring insertion.
+  'hrsh7th/cmp-path',
   'onsails/lspkind-nvim', -- use VSCode like icons in lsp
   'L3MON4D3/LuaSnip', -- expand suggestion in nvim-cmp
   'williamboman/mason.nvim', -- lsp installer
