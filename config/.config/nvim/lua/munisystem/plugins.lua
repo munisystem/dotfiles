@@ -21,6 +21,12 @@ require("lazy").setup({
   'hrsh7th/cmp-nvim-lsp-signature-help', -- show function signatures duaring insertion.
   'hrsh7th/cmp-path',
   'onsails/lspkind-nvim', -- use VSCode like icons in lsp
+  {
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup({})
+    end
+  },
   'L3MON4D3/LuaSnip', -- expand suggestion in nvim-cmp
   'williamboman/mason.nvim', -- lsp installer
   'williamboman/mason-lspconfig.nvim',
