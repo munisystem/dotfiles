@@ -15,7 +15,8 @@ treesitter.setup{
     'typescript',
     'html',
     'css',
-    'astro'
+    'astro',
+    'markdown'
   },
   highlight = {
     enable = true

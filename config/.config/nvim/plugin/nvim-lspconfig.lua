@@ -9,12 +9,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local opts = { noremap=true, silent=true, buffer=bufnr }
-  keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-  keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
-  keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-  keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-  keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 
   -- Format using prettier instead of typescript-language-server
   if client.name == 'tsserver' then
@@ -126,15 +121,16 @@ local function goimports(wait_ms)
   end
 end
 
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = { '*.go' },
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.go" },
   callback = goimports()
 })
 
--- Format code on save
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = { '*.go' },
-  callback = vim.lsp.buf.formatting
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.go" },
+  callback = function()
+	  vim.lsp.buf.format()
+  end,
 })
 
 lspconfig.dockerls.setup {}

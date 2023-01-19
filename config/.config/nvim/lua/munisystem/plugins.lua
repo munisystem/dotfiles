@@ -24,6 +24,10 @@ require("lazy").setup({
   'williamboman/mason.nvim', -- lsp installer
   'williamboman/mason-lspconfig.nvim',
   'MunifTanjim/prettier.nvim',
+  {
+    'glepnir/lspsaga.nvim',
+    event = 'BufRead',
+  },
   'jose-elias-alvarez/null-ls.nvim',
   {
     'nvim-treesitter/nvim-treesitter',
