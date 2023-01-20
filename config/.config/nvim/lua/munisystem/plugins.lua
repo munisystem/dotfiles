@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  'navarasu/onedark.nvim',
+  'EdenEast/nightfox.nvim', -- colorscheme
   'nvim-lua/plenary.nvim',
   'neovim/nvim-lspconfig',
   'hrsh7th/nvim-cmp',
