@@ -10,7 +10,6 @@ lspconfig.setup({
   ensure_installed = {
     'sumneko_lua',
     'gopls',
-    -- 'tsserver', Use typescript-language-server instead of tsserver.
     'tsserver',
     'eslint',
     'astro',
