@@ -3,5 +3,10 @@ if (not no_errors) then
   return
 end
 
-nightfox.setup({})
+nightfox.setup({
+  options = {
+    transparent = true,
+    terminal_colors = true,
+  }
+})
 vim.cmd("colorscheme nightfox")
