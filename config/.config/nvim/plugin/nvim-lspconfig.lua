@@ -103,6 +103,13 @@ lspconfig.sumneko_lua.setup {
   }
 }
 
+lspconfig.pylsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.pyre.setup {}
+
 -- Import missing packages using gopls
 -- cf. https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports
 local function goimports(wait_ms)
