@@ -48,6 +48,7 @@ require("lazy").setup({
     dependencies = {{ 'nvim-lua/plenary.nvim' }}
   },
   'nvim-telescope/telescope-file-browser.nvim',
+  'nvim-telescope/telescope-project.nvim',
   'windwp/nvim-autopairs',
   'numToStr/Comment.nvim',
   {

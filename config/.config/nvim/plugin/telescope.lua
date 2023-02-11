@@ -7,6 +7,7 @@ local map = vim.keymap
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 local fb = require "telescope".extensions.file_browser
+local project = require "telescope".extensions.project
 
 
 telescope.setup({
@@ -36,6 +37,7 @@ telescope.setup({
   }
 })
 telescope.load_extension "file_browser"
+telescope.load_extension "project"
 
 map.set('n', '<leader>ff', function()
   builtin.find_files({
@@ -59,4 +61,10 @@ end)
 
 map.set('n', '<leader>fb', function()
   builtin.buffers()
+end)
+
+map.set('n', '<leader>p', function()
+  project.project({
+    display_type = "full",
+  })
 end)
