@@ -28,11 +28,9 @@ telescope.setup({
       hijack_netrw = true,
       grouped = true,
       hidden = true,
-      mappings = {
-        n = {
-          ["n"] = fb.actions.create,
-        }
-      }
+    },
+    project = {
+      hidden_files = true,
     }
   }
 })
@@ -53,7 +51,7 @@ map.set('n', '<leader>b', function()
   })
 end)
 
-map.set('n', '<leader>fg', function()
+map.set('n', '<leader>fs', function()
   builtin.live_grep({
     file_ignore_patterns = { 'node_modules/.*', '.git/.*' }
   })
