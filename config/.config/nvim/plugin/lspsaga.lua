@@ -3,9 +3,8 @@ if (not no_errors) then return end
 
 lspsaga.setup({
   ui = {
-    border = "single",
-    title = false,
-    winblend = 10,
+    border = "double",
+    title = true,
   },
   diagnostic = {
     swhow_code_action = false,

@@ -8,7 +8,7 @@ if (not no_errors) then return end
 
 lspconfig.setup({
   ensure_installed = {
-    'sumneko_lua',
+    'lua_ls',
     'gopls',
     'tsserver',
     'eslint',
