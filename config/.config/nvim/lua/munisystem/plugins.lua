@@ -53,7 +53,7 @@ require("lazy").setup({
   'numToStr/Comment.nvim',
   {
     'akinsho/bufferline.nvim',
-    version = "v2.*",
+    version = "*",
     dependencies = 'kyazdani42/nvim-web-devicons'
   },
   'github/copilot.vim',
