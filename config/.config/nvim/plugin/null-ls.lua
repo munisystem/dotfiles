@@ -1,17 +1,37 @@
-local no_errors, null_ls = pcall(require, 'null-ls')
-if (not no_errors) then return end
+local no_errors, null_ls = pcall(require, "null-ls")
+if not no_errors then
+	return
+end
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local lsp_formatting = function(bufnr)
+	vim.lsp.buf.format({
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+		bufnr = bufnr,
+	})
+end
 
 null_ls.setup({
-  on_attach = function(client, bufnr)
-    if client.server_capabilities.documentFormattingProvider then
-      vim.cmd('nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.format({ async = true })<CR>')
-
-      -- format on save
-      vim.cmd('autocmd BufWritePost <buffer> lua vim.lsp.buf.format({ async = true })')
-    end
-
-    if client.server_capabilities.documentRangeFormattingProvider then
-      vim.cmd('xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_format({})<CR>')
-    end
-  end
+	sources = {
+		null_ls.builtins.formatting.shfmt,
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.diagnostics.eslint,
+		null_ls.builtins.formatting.goimports,
+		null_ls.builtins.diagnostics.markdownlint_cli2,
+		null_ls.builtins.formatting.markdownlint,
+	},
+	on_attach = function(client, bufnr)
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					lsp_formatting(bufnr)
+				end,
+			})
+		end
+	end,
 })
