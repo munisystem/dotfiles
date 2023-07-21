@@ -4,14 +4,6 @@ if not no_errors then
 end
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-local lsp_formatting = function(bufnr)
-	vim.lsp.buf.format({
-		filter = function(client)
-			return client.name == "null-ls"
-		end,
-		bufnr = bufnr,
-	})
-end
 
 null_ls.setup({
 	sources = {
@@ -29,7 +21,7 @@ null_ls.setup({
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					lsp_formatting(bufnr)
+					vim.lsp.buf.format({ timeout_ms = 5000 })
 				end,
 			})
 		end
