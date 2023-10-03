@@ -1,6 +1,6 @@
 __fzf_select_history() {
   BUFFER=$(\history -n -r 1 | \
-    fzf --no-sort --reverse)
+    fzf +s +m -x -e --reverse)
     CURSOR=$#BUFFER
     zle reset-prompt
 }
