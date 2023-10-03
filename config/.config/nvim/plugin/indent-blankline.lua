@@ -1,5 +1,5 @@
-local no_errors, blankline = pcall(require, 'indent_blankline')
-if (not no_errors) then
+local no_errors, blankline = pcall(require, "ibl")
+if not no_errors then
   return
 end
 

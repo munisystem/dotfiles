@@ -1,5 +1,7 @@
 local no_errors, lspsaga = pcall(require, "lspsaga")
-if (not no_errors) then return end
+if not no_errors then
+  return
+end
 
 lspsaga.setup({
   ui = {
@@ -11,11 +13,15 @@ lspsaga.setup({
   },
   symbol_in_winbar = {
     enable = false,
-  }
+  },
+  definition = {
+    split = "x",
+    vsplit = "v",
+  },
 })
 
 local keymap = vim.keymap.set
-keymap('n', 'gl', "<cmd>Lspsaga show_line_diagnostics<CR>")
+keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>")
 keymap("n", "gd", "<cmd>Lspsaga lsp_finder<CR>")
 keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>")
 keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
