@@ -30,6 +30,7 @@ Desktop.ini
 
 # secrets
 .env
+.envrc
 
 # Ruby
 .solargraph.yml
