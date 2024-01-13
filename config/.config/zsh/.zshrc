@@ -48,5 +48,10 @@ function __prompt_preexec() {
 preexec_functions+=(__prompt_preexec)
 precmd_functions+=(__prompt_precmd)
 
+source <(pkgx --shellcode)  #docs.pkgx.sh/shellcode
+
+# direnv
+eval "$(direnv hook zsh)"
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

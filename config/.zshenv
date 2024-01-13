@@ -14,9 +14,6 @@ export EDITOR=/opt/homebrew/bin/nvim
 setopt no_global_rcs
 export PATH=/usr/local/bin:$PATH
 
-# asdf-vm
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
 # Homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
 
