@@ -6,3 +6,6 @@ packer_compiled.lua
 # zsh
 .zsh_sessions
 .zprofile
+
+# tmux
+config/.config/tmux/plugins
