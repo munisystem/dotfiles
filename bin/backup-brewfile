@@ -5,4 +5,4 @@ ROOT_DIR=$(cd $(dirname $0)/..; pwd)
 CONFIG_PATH=${ROOT_DIR}/config
 
 cd $CONFIG_PATH
-brew bundle dump --force --mas
+brew bundle dump --force
