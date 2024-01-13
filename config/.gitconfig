@@ -11,6 +11,8 @@
   branch = auto
   interactive = auto
   grep = auto
+[alias]
+  sync = !branch=($(git branch -l main master | sed 's/^* //')) && git switch $branch && git pull origin $branch && git fetch -p origin && git branch -d $(git branch --merged | grep -v $branch | grep -v '*')
 [ghq]
   root = ~/repos/src
 [github]
