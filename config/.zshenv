@@ -27,9 +27,7 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # Go
-[ -n "$(go env GOBIN)" ] && export PATH="$(go env GOBIN):${PATH}"
-[ -n "$(go env GOPATH)" ] && export PATH="$(go env GOPATH)/bin:${PATH}"
-export GOGO111MODULE=on
+export PATH="${PATH}:${HOME}/go/bin"
 
 # Google Cloud SDK
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
