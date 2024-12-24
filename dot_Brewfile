@@ -1,6 +1,5 @@
 tap "homebrew/bundle"
-brew "gnupg"
-cask "docker"
 cask "1password-cli"
+cask "docker"
 cask "font-monaspace"
 cask "font-monaspace-nerd-font"
