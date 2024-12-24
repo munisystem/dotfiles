@@ -1,0 +1,16 @@
+[ghq]
+  root=~/workspace/repos
+
+[user]
+  email = munisystem@gmail.com
+  name = Yuichi Saito
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILMqU1rzdV0qrtDyqbq2qMSdCaGy9s6fnhOKJMWXrCcT
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true

@@ -1,0 +1,14 @@
+packages:
+  darwin:
+    pkgx:
+    - 'chezmoi'
+    - 'gh'
+    - 'exa'
+    - 'starship'
+    - 'neovim.io'
+    - 'tig'
+    - 'ghq'
+    - 'crates.io/ripgrep'
+    - 'github.com/junegunn/fzf'
+    - 'crates.io/fd-find'
+    - 'crates.io/bat'

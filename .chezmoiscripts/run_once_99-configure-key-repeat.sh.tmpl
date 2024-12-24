@@ -1,0 +1,6 @@
+#!/bin/bash
+
+{{ if eq .chezmoi.os "darwin" }}
+defaults write -g KeyRepeat -int 1
+defaults write -g InitialKeyRepeat -int 8
+{{ end }}
