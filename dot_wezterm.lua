@@ -27,21 +27,21 @@ config.keys = {
   { key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
   { key = "[", mods = "LEADER", action = act.ActivateCopyMode }
 }
- 
+
 config.key_tables = {
   copy_mode = {
-  { key = 'h', mods = 'NONE', action = act.CopyMode 'MoveLeft' },
-    { key = 'j', mods = 'NONE', action = act.CopyMode 'MoveDown' },
-    { key = 'k', mods = 'NONE', action = act.CopyMode 'MoveUp' },
-    { key = 'l', mods = 'NONE', action = act.CopyMode 'MoveRight' },
-    { key = 'n', mods = 'CTRL', action = act.CopyMode 'PageDown' },
-    { key = 'p', mods = 'CTRL', action = act.CopyMode 'PageUp' },
-    { key = 'v', mods = 'NONE', action = act.CopyMode { SetSelectionMode = 'Cell' } },
-    { key = 'v', mods = 'CTRL', action = act.CopyMode { SetSelectionMode = 'Block' } },
-    { key = 'V', mods = 'NONE', action = act.CopyMode { SetSelectionMode = 'Line' } },
+    { key = 'h', mods = 'NONE',  action = act.CopyMode 'MoveLeft' },
+    { key = 'j', mods = 'NONE',  action = act.CopyMode 'MoveDown' },
+    { key = 'k', mods = 'NONE',  action = act.CopyMode 'MoveUp' },
+    { key = 'l', mods = 'NONE',  action = act.CopyMode 'MoveRight' },
+    { key = 'n', mods = 'CTRL',  action = act.CopyMode 'PageDown' },
+    { key = 'p', mods = 'CTRL',  action = act.CopyMode 'PageUp' },
+    { key = 'v', mods = 'NONE',  action = act.CopyMode { SetSelectionMode = 'Cell' } },
+    { key = 'v', mods = 'CTRL',  action = act.CopyMode { SetSelectionMode = 'Block' } },
+    { key = 'V', mods = 'NONE',  action = act.CopyMode { SetSelectionMode = 'Line' } },
     { key = 'V', mods = 'SHIFT', action = act.CopyMode { SetSelectionMode = 'Line' } },
-    { key = '/', mods = 'NONE', action = act.Search { CaseSensitiveString = '' } },
-    { 
+    { key = '/', mods = 'NONE',  action = act.Search { CaseSensitiveString = '' } },
+    {
       key = 'Escape',
       mods = 'NONE',
       action = act.Multiple {
@@ -49,7 +49,7 @@ config.key_tables = {
         { CopyMode = 'Close' },
       }
     },
-    { 
+    {
       key = 'q',
       mods = 'NONE',
       action = act.Multiple {
@@ -68,10 +68,10 @@ config.key_tables = {
     }
   },
   search_mode = {
-    { key = 'Enter', mods = 'NONE', action = act.CopyMode 'NextMatch' },
+    { key = 'Enter', mods = 'NONE',  action = act.CopyMode 'NextMatch' },
     { key = 'Enter', mods = 'SHIFT', action = act.CopyMode 'PriorMatch' },
-    { key = 'n', mods = 'CTRL', action = act.CopyMode 'NextMatch' },
-    { key = 'p', mods = 'CTRL', action = act.CopyMode 'PriorMatch' },
+    { key = 'n',     mods = 'CTRL',  action = act.CopyMode 'NextMatch' },
+    { key = 'p',     mods = 'CTRL',  action = act.CopyMode 'PriorMatch' },
     {
       key = "[",
       mods = "LEADER",
