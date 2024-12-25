@@ -1,5 +1,5 @@
 #!/bin/bash
 
-{{ range .packages.darwin.pkgx -}}
+{{ range .packages.pkgx -}}
 pkgx install {{ . | quote }}
 {{ end -}}
