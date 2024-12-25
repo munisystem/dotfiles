@@ -13,6 +13,7 @@ autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 
 zi light olets/zsh-abbr
+zi light agkozak/zsh-z
 
 zi wait lucid light-mode for \
 atinit"zicompinit; zicdreplay" \
