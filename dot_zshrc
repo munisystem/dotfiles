@@ -22,7 +22,10 @@ atinit"zicompinit; zicdreplay" \
 blockf \
   zsh-users/zsh-completions
 
-[[ -x $(which exa) ]] && alias ls='exa --icons'
+[[ -x $(which exa) ]] && abbr -S --quieter --force ls='exa --icons'
+[[ -x $(which bat) ]] && abbr -S --quieter --force cat='bat'
+[[ -x $(which fd) ]] && abbr -S --quieter --force find='fd'
+[[ -x $(which chezmoi) ]] && abbr -S --quiet ch=chezmoi
 [[ -x $(which fzf) ]] && source <(fzf --zsh)
 [[ -x $(which direnv) ]] && source <(direnv hook zsh)
 
@@ -31,5 +34,3 @@ if [[ -f "$HOME/.env-secrets" ]]; then
 fi
 
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
-[[ -x $(which chezmoi) ]] && abbr -S --quiet ch=chezmoi
