@@ -30,3 +30,5 @@ if [[ -f "$HOME/.env-secrets" ]]; then
 fi
 
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+[[ -x $(which chezmoi) ]] && abbr ch=chezmoi
