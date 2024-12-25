@@ -1,5 +1,8 @@
 tap "homebrew/bundle"
+tap "olets/tap"
+brew "olets/tap/zsh-abbr"
 cask "1password-cli"
+cask "amazon-q"
 cask "docker"
 cask "font-monaspace"
 cask "font-monaspace-nerd-font"
