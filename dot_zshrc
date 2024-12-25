@@ -13,6 +13,7 @@ autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 
 zi light olets/zsh-abbr
+
 zi wait lucid light-mode for \
 atinit"zicompinit; zicdreplay" \
     zdharma/fast-syntax-highlighting \
@@ -21,5 +22,10 @@ blockf \
 
 [[ -x $(which exa) ]] && alias ls='exa --icons'
 [[ -x $(which fzf) ]] && source <(fzf --zsh)
+[[ -x $(which direnv) ]] && source <(direnv hook zsh)
+
+if [[ -f "$HOME/.env-secrets" ]]; then
+  source "$HOME/.env-secrets"
+fi
 
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
