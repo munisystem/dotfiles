@@ -15,6 +15,15 @@ config.inactive_pane_hsb = {
 
 config.scrollback_lines = 5000
 
+wezterm.on('update-right-status', function(window, pane)
+  window:set_right_status(
+    wezterm.format {
+      { Attribute = { Intensity = 'Bold' } },
+      { Text = window:active_workspace() },
+    }
+  )
+end)
+
 local act = wezterm.action
 config.leader = { key = "j", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
@@ -24,8 +33,70 @@ config.keys = {
   { key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
   { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
   { key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+  { key = "J", mods = "LEADER", action = act.AdjustPaneSize { "Down", 5 } },
+  { key = "K", mods = "LEADER", action = act.AdjustPaneSize { "Up", 5 } },
+  { key = "L", mods = "LEADER", action = act.AdjustPaneSize { "Left", 5 } },
+  { key = "H", mods = "LEADER", action = act.AdjustPaneSize { "Right", 5 } },
   { key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
-  { key = "[", mods = "LEADER", action = act.ActivateCopyMode }
+  { key = "[", mods = "LEADER", action = act.ActivateCopyMode },
+  { key = "s", mods = "LEADER", action = act.ShowLauncherArgs { flags = 'WORKSPACES', title = "Select workspace" } },
+  {
+    key = "e",
+    mods = "LEADER",
+    action = act.PromptInputLine {
+      description = wezterm.format {
+        { Attribute = { Intensity = 'Bold' } },
+        { Foreground = { AnsiColor = 'Fuchsia' } },
+        { Text = 'Enter name for tab' },
+      },
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          window:active_tab():set_title(line)
+        end
+      end)
+
+    }
+  },
+  {
+    key = "S",
+    mods = "LEADER",
+    action = act.PromptInputLine {
+      description = wezterm.format {
+        { Attribute = { Intensity = 'Bold' } },
+        { Foreground = { AnsiColor = 'Fuchsia' } },
+        { Text = 'Enter name for new workspace' },
+      },
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          window:perform_action(
+            act.SwitchToWorkspace { name = line },
+            pane
+          )
+        end
+      end)
+
+    }
+  },
+  {
+    key = "$",
+    mods = "LEADER",
+    action = act.PromptInputLine {
+      description = wezterm.format {
+        { Attribute = { Intensity = 'Bold' } },
+        { Foreground = { AnsiColor = 'Fuchsia' } },
+        { Text = 'Enter name for workspace' },
+      },
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          wezterm.mux.rename_workspace(
+            wezterm.mux.get_active_workspace(),
+            line
+          )
+        end
+      end)
+
+    }
+  },
 }
 
 config.key_tables = {
