@@ -1,7 +1,6 @@
 export EDITOR=nvim
 export GOMODCACHE=$HOME/.cache/go/pkg/mod
-
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+export GOPATH=$HOME/workspace/go
 
 [[ -x $(which starship) ]] && eval "$(starship init zsh)"
 
@@ -33,4 +32,4 @@ if [[ -f "$HOME/.env-secrets" ]]; then
   source "$HOME/.env-secrets"
 fi
 
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+abbr -S --quiet gpo="git push origin HEAD"
