@@ -1,7 +1,11 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.font = wezterm.font 'Monaspace Neon'
+config.font = wezterm.font {
+  family = 'Monaspace Neon',
+  weight = 'Regular',
+  harfbuzz_features = { 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
+}
 config.font_size = 16.0
 
 config.color_scheme = 'iceberg-dark'
@@ -107,6 +111,14 @@ config.key_tables = {
     { key = 'l', mods = 'NONE',  action = act.CopyMode 'MoveRight' },
     { key = 'n', mods = 'CTRL',  action = act.CopyMode 'PageDown' },
     { key = 'p', mods = 'CTRL',  action = act.CopyMode 'PageUp' },
+    { key = '0', mods = 'NONE',  action = act.CopyMode 'MoveToStartOfLine' },
+    { key = '$', mods = 'NONE',  action = act.CopyMode 'MoveToEndOfLineContent' },
+    { key = '^', mods = 'NONE',  action = act.CopyMode 'MoveToStartOfLineContent' },
+    { key = 'w', mods = 'NONE',  action = act.CopyMode 'MoveForwardWord' },
+    { key = 'b', mods = 'NONE',  action = act.CopyMode 'MoveBackwardWord' },
+    { key = 'e', mods = 'NONE',  action = act.CopyMode 'MoveForwardWordEnd' },
+    { key = 'g', mods = 'NONE',  action = act.CopyMode 'MoveToScrollbackTop' },
+    { key = 'G', mods = 'NONE',  action = act.CopyMode 'MoveToScrollbackBottom' },
     { key = 'v', mods = 'NONE',  action = act.CopyMode { SetSelectionMode = 'Cell' } },
     { key = 'v', mods = 'CTRL',  action = act.CopyMode { SetSelectionMode = 'Block' } },
     { key = 'V', mods = 'NONE',  action = act.CopyMode { SetSelectionMode = 'Line' } },
