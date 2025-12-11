@@ -1,5 +1,5 @@
 #!/bin/bash
 
 {{ range .packages.pkgx -}}
-pkgx install "{{ . | quote }}"
+pkgm shim "{{ . | quote }}"
 {{ end -}}
