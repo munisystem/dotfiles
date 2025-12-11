@@ -66,10 +66,9 @@ if [[ -f "$HOME/.env-secrets" ]]; then
   source "$HOME/.env-secrets"
 fi
 
-# keybinds
-bindkey -d
-bindkey -e
+# functions
 
+## support cd to git repositories
 __fzf_ghq() {
   local selected_dir=$(ghq list -p | fzf --reverse)
   if [[ -n "$selected_dir" ]]; then
@@ -79,16 +78,14 @@ __fzf_ghq() {
   zle reset-prompt
 }
 zle -N __fzf_ghq
-bindkey '^]''r' __fzf_ghq
 
-# git switch with fzf (supports worktree)
+## extends git switch for supporting git worktree
 __git_switch() {
   local branch
   branch=$(git branch --format='%(refname:short)' | fzf --reverse)
 
   [[ -z "$branch" ]] && return 0
 
-  # Check if this branch has a worktree
   local worktree_path
   worktree_path=$(git worktree list --porcelain | awk -v branch="$branch" '
     /^worktree / { path = substr($0, 10) }
@@ -106,7 +103,7 @@ __git_switch() {
   fi
 }
 
-# git worktree helper
+## utility to create git worktree like a git switch -c
 __git_worktree_switch() {
   local branch="$1"
   if [[ -z "$branch" ]]; then
@@ -122,7 +119,6 @@ __git_worktree_switch() {
 
   local worktree_path="${git_root}/.worktrees/${branch}"
 
-  # Check if branch exists
   if git show-ref --verify --quiet "refs/heads/${branch}"; then
     git worktree add "$worktree_path" "$branch" && cd "$worktree_path"
   else
@@ -130,7 +126,7 @@ __git_worktree_switch() {
   fi
 }
 
-# git branch delete helper (supports worktree)
+## utility to delete git branch
 __git_branch_delete() {
   local branch="$1"
   if [[ -z "$branch" ]]; then
@@ -181,6 +177,11 @@ __git_branch_delete() {
     git branch -d "$branch"
   fi
 }
+
+# keybinds
+bindkey -d
+bindkey -e
+bindkey '^]''r' __fzf_ghq
 
 # aliases
 if [[ -f "/opt/homebrew/share/zsh-abbr/zsh-abbr.zsh" ]]; then
