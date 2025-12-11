@@ -32,9 +32,9 @@
     done; \
   }; f"
 
-  poh = "push origin head"
+  po = "push origin head"
 
-  puh = "!f() { \
+  pu = "!f() { \
     branch=$(git branch --contains | cut -d \" \" -f 2); \
     git pull origin $branch; \
   }; f"
