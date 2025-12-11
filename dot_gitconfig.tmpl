@@ -18,3 +18,16 @@
 
 [commit]
   gpgsign = true
+
+[alias]
+  prune = "!f() { \
+    git fetch --prune; \
+    for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do \
+      worktree=$(git worktree list --porcelain | awk -v b=\"$branch\" ' \
+        /^worktree /{p=substr($0,10)} \
+        /^branch /{gsub(/refs\\/heads\\//,\"\",$2); if($2==b){print p;exit}}'); \
+      [ -n \"$worktree\" ] && git worktree remove \"$worktree\"; \
+      git branch -d \"$branch\"; \
+    done; \
+  }; f"
+
