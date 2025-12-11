@@ -40,6 +40,6 @@
   }; f"
 
   ac = "!f() { \
-    message=$(claude -p 'Generate ONLY a one-line Git commit message in English, using imperative mood, summarizing what was changed and why, based strictly on the contents of `git diff --cached`. Do not add explanation or a body. Output only the commit summary line.'); \
+    message=$(claude -p 'Generate ONLY a one-line Git commit message following Conventional Commits format (feat:, fix:, docs:, chore:, refactor:, test:, style:, perf:, ci:, build:) in English, summarizing what was changed based strictly on the contents of `git diff --cached`. Do not add explanation or a body. Output only the commit summary line.'); \
     git commit -m \"$message\" -e; \
   }; f"
