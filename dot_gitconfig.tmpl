@@ -1,0 +1,33 @@
+[ghq]
+  root=~/workspace/repos
+
+[user]
+  name = Yuichi Saito
+
+  email = {{ get . "email" | default "munisystem@gmail.com" }}
+  signingkey = {{ get . "signingKey" | default "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGAaFkpU7qSqJan2xTP8eez4Wq5DHC4zYRaf4Q7Oiv+o" }}
+
+[commit]
+  gpgSign = true
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
+[alias]
+  prune = "!f() { \
+    git fetch --prune; \
+    for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do \
+      worktree=$(git worktree list --porcelain | awk -v b=\"$branch\" ' \
+        /^worktree /{p=substr($0,10)} \
+        /^branch /{gsub(/refs\\/heads\\//,\"\",$2); if($2==b){print p;exit}}'); \
+      [ -n \"$worktree\" ] && git worktree remove \"$worktree\"; \
+      git branch -d \"$branch\"; \
+    done; \
+  }; f"
+

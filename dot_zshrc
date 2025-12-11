@@ -8,8 +8,6 @@ setopt extended_history
 setopt share_history
 setopt append_history
 
-bindkey -e
-
 [[ -x $(which starship) ]] && eval "$(starship init zsh)"
 
 if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
@@ -68,6 +66,70 @@ if [[ -f "$HOME/.env-secrets" ]]; then
   source "$HOME/.env-secrets"
 fi
 
+# keybinds
+bindkey -d
+bindkey -e
+
+__fzf_ghq() {
+  local selected_dir=$(ghq list -p | fzf --reverse)
+  if [[ -n "$selected_dir" ]]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle reset-prompt
+}
+zle -N __fzf_ghq
+bindkey '^]''r' __fzf_ghq
+
+# git switch with fzf (supports worktree)
+__git_switch() {
+  local branch
+  branch=$(git branch --format='%(refname:short)' | fzf --reverse)
+
+  [[ -z "$branch" ]] && return 0
+
+  # Check if this branch has a worktree
+  local worktree_path
+  worktree_path=$(git worktree list --porcelain | awk -v branch="$branch" '
+    /^worktree / { path = substr($0, 10) }
+    /^branch / {
+      b = $2
+      sub(/^refs\/heads\//, "", b)
+      if (b == branch) { print path; exit }
+    }
+  ')
+
+  if [[ -n "$worktree_path" ]]; then
+    cd "$worktree_path"
+  else
+    git switch "$branch"
+  fi
+}
+
+# git worktree helper
+__git_worktree_switch() {
+  local branch="$1"
+  if [[ -z "$branch" ]]; then
+    echo "Usage: __git_worktree_switch <branch>" >&2
+    return 1
+  fi
+
+  local git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [[ -z "$git_root" ]]; then
+    echo "Not a git repository" >&2
+    return 1
+  fi
+
+  local worktree_path="${git_root}/.worktrees/${branch}"
+
+  # Check if branch exists
+  if git show-ref --verify --quiet "refs/heads/${branch}"; then
+    git worktree add "$worktree_path" "$branch" && cd "$worktree_path"
+  else
+    git worktree add -b "$branch" "$worktree_path" && cd "$worktree_path"
+  fi
+}
+
 # aliases
 if [[ -f "/opt/homebrew/share/zsh-abbr/zsh-abbr.zsh" ]]; then
   source /opt/homebrew/share/zsh-abbr/zsh-abbr.zsh
@@ -76,4 +138,6 @@ if [[ -f "/opt/homebrew/share/zsh-abbr/zsh-abbr.zsh" ]]; then
   [[ -x $(which bat) ]] && abbr add --quieter --force cat='bat'
   [[ -x $(which fd) ]] && abbr add --quieter --force find='fd'
   [[ -x $(which chezmoi) ]] && abbr add --quieter ch=chezmoi
+  abbr add --quieter --force 'git sw'='__git_switch'
+  abbr add --quieter --force 'git wt'='__git_worktree_switch'
 fi
