@@ -20,9 +20,10 @@
   gpgsign = true
 
 [alias]
-  prune = "!f() { \
+  cleanup = "!f() { \
     git fetch --prune; \
-    for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do \
+    default_branch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@' || echo 'main'); \
+    for branch in $(git branch --merged \"$default_branch\" | grep -v '\\*\\|main\\|master' | tr -d ' +'); do \
       worktree=$(git worktree list --porcelain | awk -v b=\"$branch\" ' \
         /^worktree /{p=substr($0,10)} \
         /^branch /{gsub(/refs\\/heads\\//,\"\",$2); if($2==b){print p;exit}}'); \

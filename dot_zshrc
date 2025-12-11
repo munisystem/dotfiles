@@ -130,6 +130,58 @@ __git_worktree_switch() {
   fi
 }
 
+# git branch delete helper (supports worktree)
+__git_branch_delete() {
+  local branch="$1"
+  if [[ -z "$branch" ]]; then
+    branch=$(git branch --format='%(refname:short)' | grep -v '^main$\|^master$' | fzf --reverse)
+    [[ -z "$branch" ]] && return 0
+  fi
+
+  local default_branch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
+  [[ -z "$default_branch" ]] && default_branch="main"
+
+  if [[ "$branch" == "$default_branch" || "$branch" == "main" || "$branch" == "master" ]]; then
+    echo "Cannot delete $branch branch" >&2
+    return 1
+  fi
+
+  if ! git show-ref --verify --quiet "refs/heads/$branch"; then
+    echo "Branch $branch does not exist" >&2
+    return 1
+  fi
+
+  local merged=$(git branch --merged "$default_branch" | tr -d ' +*' | grep -x "$branch")
+  local force=false
+  if [[ -z "$merged" ]]; then
+    echo "Branch $branch is not merged."
+    read -q "reply?Delete anyway? [y/N] "
+    echo
+    if [[ "$reply" == "y" ]]; then
+      force=true
+    else
+      return 1
+    fi
+  fi
+
+  local worktree=$(git worktree list --porcelain | awk -v b="$branch" '
+    /^worktree /{p=substr($0,10)}
+    /^branch /{gsub(/refs\/heads\//,"",$2); if($2==b){print p;exit}}')
+
+  local main_worktree=$(git worktree list --porcelain | awk '/^worktree /{print substr($0,10); exit}')
+
+  if [[ -n "$worktree" ]]; then
+    cd "$main_worktree"
+    git worktree remove "$worktree"
+  fi
+
+  if [[ "$force" == true ]]; then
+    git branch -D "$branch"
+  else
+    git branch -d "$branch"
+  fi
+}
+
 # aliases
 if [[ -f "/opt/homebrew/share/zsh-abbr/zsh-abbr.zsh" ]]; then
   source /opt/homebrew/share/zsh-abbr/zsh-abbr.zsh
@@ -140,4 +192,5 @@ if [[ -f "/opt/homebrew/share/zsh-abbr/zsh-abbr.zsh" ]]; then
   [[ -x $(which chezmoi) ]] && abbr add --quieter ch=chezmoi
   abbr add --quieter --force 'git sw'='__git_switch'
   abbr add --quieter --force 'git wt'='__git_worktree_switch'
+  abbr add --quieter --force 'git bd'='__git_branch_delete'
 fi
