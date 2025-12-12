@@ -67,6 +67,12 @@ if [[ -f "$HOME/.env-secrets" ]]; then
 fi
 
 # functions
+__fzf_history() {
+  BUFFER=$(history -n -r 1 | fzf --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+zle -N __fzf_history
 
 ## support cd to git repositories
 __fzf_ghq() {
@@ -182,6 +188,7 @@ __git_branch_delete() {
 bindkey -d
 bindkey -e
 bindkey '^]''r' __fzf_ghq
+bindkey '^r' __fzf_history
 
 # aliases
 if [[ -f "/opt/homebrew/share/zsh-abbr/zsh-abbr.zsh" ]]; then
