@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e \"display notification \\\"Response completed in $(basename $CLAUDE_PROJECT_DIR)\\\" with title \\\"Claude Code\\\" subtitle \\\"$CLAUDE_PROJECT_DIR\\\"\" && afplay /System/Library/Sounds/Glass.aiff"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e \"display notification \\\"Awaiting input in $(basename $CLAUDE_PROJECT_DIR)\\\" with title \\\"Claude Code\\\" subtitle \\\"$CLAUDE_PROJECT_DIR\\\"\" && afplay /System/Library/Sounds/Glass.aiff"
+          }
+        ]
+      }
+    ]
+  }
+}
