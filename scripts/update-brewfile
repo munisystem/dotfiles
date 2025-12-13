@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CHEZMOI_DIR="$(dirname "$SCRIPT_DIR")"
+BREWFILE_PATH="$CHEZMOI_DIR/dot_Brewfile"
+
+brew bundle dump --force --no-vscode --file="$BREWFILE_PATH"
+
+echo "Updated: $BREWFILE_PATH"
