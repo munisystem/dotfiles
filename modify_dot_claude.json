@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Read existing content from stdin (chezmoi passes current file content)
+existing_content=$(cat)
+
+# If file doesn't exist or is empty, start with empty object
+if [ -z "$existing_content" ]; then
+    existing_content='{}'
+fi
+
+# Define MCP servers configuration
+mcp_servers='{
+  "serena": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "--from",
+      "git+https://github.com/oraios/serena",
+      "serena",
+      "start-mcp-server",
+      "--enable-web-dashboard",
+      "false"
+    ]
+  },
+  "context7": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@upstash/context7-mcp@latest"
+    ]
+  }
+}'
+
+# Merge MCP servers into existing config
+# This preserves all existing fields and only updates mcpServers
+echo "$existing_content" | jq --argjson servers "$mcp_servers" '
+  .mcpServers = ((.mcpServers // {}) * $servers)
+'

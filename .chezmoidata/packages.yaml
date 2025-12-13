@@ -13,3 +13,5 @@ packages:
   - 'crates.io/bat'
   - 'direnv.net'
   - 'node>=18' # copilot-nvim requires Node.js 18+
+  - 'npx'
+  - 'uvx'
