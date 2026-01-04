@@ -62,10 +62,6 @@ function __prompt_preexec() {
 preexec_functions+=(__prompt_preexec)
 precmd_functions+=(__prompt_precmd)
 
-if [[ -f "$HOME/.env-secrets" ]]; then
-  source "$HOME/.env-secrets"
-fi
-
 # functions
 __fzf_history() {
   BUFFER=$(history -n -r 1 | fzf --query "$LBUFFER")
