@@ -195,6 +195,5 @@ if [[ -f "/opt/homebrew/share/zsh-abbr/zsh-abbr.zsh" ]]; then
   [[ -x $(which fd) ]] && abbr add --quieter --force find='fd'
   [[ -x $(which chezmoi) ]] && abbr add --quieter ch=chezmoi
   abbr add --quieter --force 'git sw'='__git_switch'
-  abbr add --quieter --force 'git wt'='__git_worktree_switch'
   abbr add --quieter --force 'git bd'='__git_branch_delete'
 fi
