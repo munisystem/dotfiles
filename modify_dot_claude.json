@@ -10,18 +10,6 @@ fi
 
 # Define MCP servers configuration
 mcp_servers='{
-  "serena": {
-    "type": "stdio",
-    "command": "uvx",
-    "args": [
-      "--from",
-      "git+https://github.com/oraios/serena",
-      "serena",
-      "start-mcp-server",
-      "--enable-web-dashboard",
-      "false"
-    ]
-  },
   "context7": {
     "type": "stdio",
     "command": "npx",
