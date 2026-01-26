@@ -21,5 +21,75 @@
         ]
       }
     ]
+  },
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Task",
+
+      "mcp__context7__*",
+      "mcp__memory__*",
+      "mcp__sequential-thinking__*",
+
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(make:*)",
+
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(diff:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(jq:*)",
+      "Bash(which:*)",
+      "Bash(type:*)",
+      "Bash(file:*)",
+      "Bash(stat:*)",
+      "Bash(echo:*)",
+      "Bash(printf:*)",
+      "Bash(pwd:*)",
+      "Bash(whoami:*)",
+      "Bash(date:*)",
+      "Bash(tree:*)",
+      "Bash(man:*)",
+      "Bash(basename:*)",
+      "Bash(dirname:*)",
+      "Bash(readlink:*)",
+      "Bash(realpath:*)",
+
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(tr:*)",
+      "Bash(cut:*)",
+      "Bash(uniq:*)",
+      "Bash(xargs:*)",
+      "Bash(tee:*)",
+
+      "Bash(mkdir:*)",
+      "Bash(touch:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(ln:*)",
+      "Bash(chmod:*)"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(su:*)",
+      "Bash(dd:*)",
+      "Read(**/.envrc)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/.aws/credentials)",
+      "Write(**/.ssh/**)",
+      "Write(**/.gnupg/**)",
+      "Edit(**/.ssh/**)",
+      "Edit(**/.gnupg/**)"
+    ],
+    "defaultMode": "plan"
   }
 }
