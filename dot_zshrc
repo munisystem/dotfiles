@@ -8,6 +8,9 @@ setopt extended_history
 setopt share_history
 setopt append_history
 
+# Activate mise for interactive shells (shims are already on PATH via .zshenv)
+[[ -x $(which mise) ]] && eval "$(mise activate zsh)"
+
 [[ -x $(which starship) ]] && eval "$(starship init zsh)"
 
 if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
@@ -190,7 +193,7 @@ bindkey '^r' __fzf_history
 if [[ -f "/opt/homebrew/share/zsh-abbr/zsh-abbr.zsh" ]]; then
   source /opt/homebrew/share/zsh-abbr/zsh-abbr.zsh
 
-  [[ -x $(which exa) ]] && abbr add --quieter --force ls='exa --icons'
+  [[ -x $(which eza) ]] && abbr add --quieter --force ls='eza --icons'
   [[ -x $(which bat) ]] && abbr add --quieter --force cat='bat'
   [[ -x $(which fd) ]] && abbr add --quieter --force find='fd'
   [[ -x $(which chezmoi) ]] && abbr add --quieter ch=chezmoi

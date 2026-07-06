@@ -1,17 +1,16 @@
 packages:
-  pkgx:
-  - 'chezmoi'
-  - 'gh'
-  - 'exa'
-  - 'starship'
-  - 'neovim.io'
-  - 'tig'
-  - 'ghq'
-  - 'crates.io/ripgrep'
-  - 'github.com/junegunn/fzf'
-  - 'crates.io/fd-find'
-  - 'crates.io/bat'
-  - 'direnv.net'
-  - 'node>=18' # copilot-nvim requires Node.js 18+
-  - 'npx'
-  - 'uvx'
+  mise:
+  - 'aqua:twpayne/chezmoi'
+  - 'aqua:cli/cli'                 # gh
+  - 'eza'                          # replaces exa; registry short name -> asdf:mise-plugins/mise-eza
+  - 'aqua:starship/starship'
+  - 'aqua:neovim/neovim'           # nvim
+  - 'asdf:yysushi/asdf-tig@2.5.12' # tig has no prebuilt macOS binary; builds from official source
+  - 'aqua:x-motemen/ghq'
+  - 'aqua:BurntSushi/ripgrep'      # rg
+  - 'aqua:junegunn/fzf'
+  - 'aqua:sharkdp/fd'
+  - 'aqua:sharkdp/bat'
+  - 'aqua:direnv/direnv'
+  - 'core:node@lts'                # pinned to LTS; npx bundled with node
+  - 'aqua:astral-sh/uv'            # uvx bundled with uv

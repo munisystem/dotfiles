@@ -14,6 +14,9 @@ fi
 
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+# mise shims resolve to real binaries; place ahead of ~/.local/bin so mise wins
+# and non-login / non-interactive shells (AI agents) can resolve tools too.
+export PATH=$HOME/.local/share/mise/shims:$PATH
 
 export EDITOR=nvim
 export GOMODCACHE=$HOME/.cache/go/pkg/mod
