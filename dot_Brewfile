@@ -73,7 +73,6 @@ cask "raycast"
 cask "slack"
 # Video communication and virtual meeting platform
 cask "zoom"
-npm "@anthropic-ai/claude-code"
 npm "@evenrealities/evenhub-simulator"
 npm "@playwright/cli"
 npm "firecrawl-cli"
