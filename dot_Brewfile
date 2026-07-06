@@ -1,32 +1,80 @@
+tap "facebook/fb", trusted: true
 tap "hanasuke/moralerspace"
 tap "homebrew/bundle"
-tap "k1low/tap"
+tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap"
+tap "kayac/tap"
 tap "olets/tap"
 tap "pkgxdev/made"
+tap "sachaos/todoist"
+tap "steipete/tap"
+# MPEG-4 command-line tool
 brew "atomicparsley"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Tool for emulating mouse and keyboard events
+brew "cliclick"
+# CLI application for interacting with a Cloudflare account
+brew "flarectl"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
+# Adds an OCR text layer to scanned PDF files
+brew "ocrmypdf"
+# Simplistic interactive filtering tool
+brew "peco"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Standalone binary that can run anything
 brew "pkgx"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Docker-compatible REST API on top of Apple container
+brew "socktainer", args: ["HEAD"]
+# Easiest, most secure way to use WireGuard and 2FA
 brew "tailscale"
-brew "tmux"
+# Enables extra languages support for Tesseract
+brew "tesseract-lang"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
+# UNIX shell (command interpreter)
 brew "zsh"
-brew "k1low/tap/git-wt"
-brew "olets/tap/zsh-abbr"
-brew "pkgxdev/made/pkgm"
+# A Powerful Command Line for automating iOS Simulators
+brew "facebook/fb/idb-companion", trusted: true
+# Command-line interface for 1Password
 cask "1password-cli"
-cask "alt-tab"
-cask "arc"
+# Anthropic's official Claude AI desktop app
 cask "claude"
+# Terminal-based AI coding assistant
 cask "claude-code"
-cask "cursor"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# Menu bar usage monitor for Codex and Claude
+cask "steipete/tap/codexbar", trusted: true
+# Voice and text chat software
 cask "discord"
+# App to build and share containerised applications and microservices
 cask "docker-desktop"
 cask "font-monaspace"
 cask "font-monaspice-nerd-font"
 cask "font-moralerspace"
+# Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Tool to control external monitor brightness & volume
 cask "monitorcontrol"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Team communication and collaboration software
 cask "slack"
-cask "wezterm"
+# Video communication and virtual meeting platform
 cask "zoom"
+npm "@anthropic-ai/claude-code"
+npm "@evenrealities/evenhub-simulator"
+npm "@playwright/cli"
+npm "firecrawl-cli"
+npm "nodemon"
+npm "pnpm"
