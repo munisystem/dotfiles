@@ -21,3 +21,5 @@ export GOPATH=$HOME/workspace/go
 
 export HISTFILE=~/.zsh_history
 source $HOME/.env-secrets
+
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
