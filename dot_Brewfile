@@ -4,7 +4,6 @@ tap "homebrew/bundle"
 tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap"
 tap "kayac/tap"
 tap "olets/tap"
-tap "pkgxdev/made"
 tap "sachaos/todoist"
 tap "steipete/tap"
 # MPEG-4 command-line tool
@@ -29,8 +28,6 @@ brew "pkgconf"
 brew "peco"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Standalone binary that can run anything
-brew "pkgx"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
 # Docker-compatible REST API on top of Apple container
