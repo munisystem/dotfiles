@@ -12,5 +12,13 @@ packages:
   - 'aqua:sharkdp/fd'
   - 'aqua:sharkdp/bat'
   - 'aqua:direnv/direnv'
+  - 'aqua:peco/peco'               # interactive filter (sibling of fzf)
+  - 'aqua:yonaskolb/XcodeGen'      # xcodegen
   - 'core:node@lts'                # pinned to LTS; npx bundled with node
   - 'aqua:astral-sh/uv'            # uvx bundled with uv
+  # npm-backed CLIs (need core:node above installed first for the npm backend)
+  - 'npm:pnpm'
+  - 'npm:nodemon'
+  - 'npm:firecrawl-cli'
+  - 'npm:@playwright/cli'
+  - 'npm:@evenrealities/evenhub-simulator'

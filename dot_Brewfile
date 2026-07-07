@@ -24,8 +24,6 @@ brew "ocrmypdf"
 brew "mise"
 # Build dependency for the mise tig source build (tig configure requires pkg-config)
 brew "pkgconf"
-# Simplistic interactive filtering tool
-brew "peco"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Interpreted, interactive, object-oriented programming language
@@ -36,8 +34,6 @@ brew "socktainer", args: ["HEAD"]
 brew "tailscale"
 # Enables extra languages support for Tesseract
 brew "tesseract-lang"
-# Generate your Xcode project from a spec file and your folder structure
-brew "xcodegen"
 # UNIX shell (command interpreter)
 brew "zsh"
 # A Powerful Command Line for automating iOS Simulators
@@ -73,8 +69,3 @@ cask "raycast"
 cask "slack"
 # Video communication and virtual meeting platform
 cask "zoom"
-npm "@evenrealities/evenhub-simulator"
-npm "@playwright/cli"
-npm "firecrawl-cli"
-npm "nodemon"
-npm "pnpm"
