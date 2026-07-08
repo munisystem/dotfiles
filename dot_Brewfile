@@ -22,8 +22,6 @@ brew "herdr"
 brew "ocrmypdf"
 # Polyglot dev tool version manager (shims resolve to real binaries)
 brew "mise"
-# Build dependency for the mise tig source build (tig configure requires pkg-config)
-brew "pkgconf"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Interpreted, interactive, object-oriented programming language

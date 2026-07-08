@@ -10,11 +10,7 @@ set -euo pipefail
 # Install node first so the npm backend has a runtime to resolve its tools.
 mise install -y node
 
-# The rest. tig (asdf:yysushi/asdf-tig) is the only tool that compiles from
-# source; block pkg-config from picking up macOS system ncurses (its $NCURSES60
-# symbol versioning clashes with the plugin's bundled libncurses at link time).
-# The env var is inert for every other tool here — they install from prebuilt
-# downloads and never invoke pkg-config.
-PKG_CONFIG_LIBDIR=/nonexistent mise install -y
+# The rest (all prebuilt-binary backends: aqua / core / npm / eza asdf).
+mise install -y
 
 mise reshim
