@@ -14,6 +14,7 @@ eza                                    = "latest"   # registry short name -> asd
 "aqua:starship/starship"               = "latest"
 "aqua:neovim/neovim"                   = "latest"   # nvim
 "asdf:yysushi/asdf-tig"                = "2.5.12"   # no prebuilt macOS binary; compiles from source (needs pkgconf + the PKG_CONFIG_LIBDIR hack in the installer)
+"aqua:jesseduffield/lazygit"           = "latest"   # lazygit
 "aqua:x-motemen/ghq"                   = "latest"
 "aqua:BurntSushi/ripgrep"              = "latest"   # rg
 "aqua:junegunn/fzf"                    = "latest"
