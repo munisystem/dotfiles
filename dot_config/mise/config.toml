@@ -1,0 +1,32 @@
+# mise global tools — the single source of truth for ~/.config/mise/config.toml.
+#
+# Managed by chezmoi. Do NOT run `mise use -g` on the machine: it rewrites this
+# file and drifts from source. Edit here and `chezmoi apply` instead (drift now
+# shows up in `chezmoi diff` rather than silently).
+#
+# Installed by .chezmoiscripts/run_onchange_after_install-packages-mise.sh.tmpl,
+# which runs `mise install` whenever this file changes.
+
+[tools]
+"aqua:twpayne/chezmoi"                 = "latest"
+"aqua:cli/cli"                         = "latest"   # gh
+eza                                    = "latest"   # registry short name -> asdf:mise-plugins/mise-eza (no aqua/ubi macOS binary)
+"aqua:starship/starship"               = "latest"
+"aqua:neovim/neovim"                   = "latest"   # nvim
+"asdf:yysushi/asdf-tig"                = "2.5.12"   # no prebuilt macOS binary; compiles from source (needs pkgconf + the PKG_CONFIG_LIBDIR hack in the installer)
+"aqua:x-motemen/ghq"                   = "latest"
+"aqua:BurntSushi/ripgrep"              = "latest"   # rg
+"aqua:junegunn/fzf"                    = "latest"
+"aqua:sharkdp/fd"                      = "latest"
+"aqua:sharkdp/bat"                     = "latest"
+"aqua:direnv/direnv"                   = "latest"
+"aqua:peco/peco"                       = "latest"   # interactive filter (sibling of fzf)
+"aqua:yonaskolb/XcodeGen"              = "latest"   # xcodegen
+node                                   = "lts"      # npx bundled with node
+"aqua:astral-sh/uv"                    = "latest"   # uvx bundled with uv
+# npm-backed CLIs — require node (the installer installs node first).
+"npm:pnpm"                             = "latest"
+"npm:nodemon"                          = "latest"
+"npm:firecrawl-cli"                    = "latest"
+"npm:@playwright/cli"                  = "latest"
+"npm:@evenrealities/evenhub-simulator" = "latest"

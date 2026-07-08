@@ -1,0 +1,20 @@
+#!/bin/bash
+# Re-runs whenever the managed mise config changes (hash of its content):
+# mise-config: {{ include "dot_config/mise/config.toml" | sha256sum }}
+set -euo pipefail
+
+# The global mise config (~/.config/mise/config.toml) is the source of truth for
+# the tool list; this script only reconciles the machine to it via `mise install`.
+# Runs as run_onchange_after_ so chezmoi has already written the config file.
+
+# Install node first so the npm backend has a runtime to resolve its tools.
+mise install -y node
+
+# The rest. tig (asdf:yysushi/asdf-tig) is the only tool that compiles from
+# source; block pkg-config from picking up macOS system ncurses (its $NCURSES60
+# symbol versioning clashes with the plugin's bundled libncurses at link time).
+# The env var is inert for every other tool here — they install from prebuilt
+# downloads and never invoke pkg-config.
+PKG_CONFIG_LIBDIR=/nonexistent mise install -y
+
+mise reshim
