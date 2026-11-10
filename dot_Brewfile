@@ -26,8 +26,6 @@ brew "mise"
 brew "pipx"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
-# Docker-compatible REST API on top of Apple container
-brew "socktainer", args: ["HEAD"]
 # Easiest, most secure way to use WireGuard and 2FA
 brew "tailscale"
 # Enables extra languages support for Tesseract
