@@ -1,0 +1,48 @@
+#!/bin/bash
+set -euo pipefail
+
+# Adds the munisystem/skills guard hooks to ~/.claude/settings.json. Claude Code
+# writes to that file too (enabledPlugins, herdr's SessionStart hook, ...), so
+# it is not a managed file: this merges the hooks below in and leaves the rest
+# alone. Re-runs when this list changes; a hook already present is kept as is.
+#
+# event|matcher|hook script under <skills>/hooks
+hooks='
+PreToolUse|Bash|guard-default-branch.sh
+PreToolUse|Bash|guard-ai-attribution.sh
+PreToolUse|Bash|guard-brew-install.sh
+PreToolUse|Edit|Write|MultiEdit|NotebookEdit|guard-worktree-edit.sh
+PostToolUse|EnterWorktree|apply-worktree-config.sh
+'
+
+skills="{{ .chezmoi.homeDir }}/workspace/repos/github.com/munisystem/skills"
+settings="$HOME/.claude/settings.json"
+mkdir -p "$(dirname "$settings")"
+[[ -f "$settings" ]] || echo '{}' >"$settings"
+
+current=$(jq . "$settings")
+updated=$current
+while IFS= read -r line; do
+  [[ -n "$line" ]] || continue
+  event=${line%%|*}
+  name=${line##*|}
+  matcher=${line#*|}
+  matcher=${matcher%|*}
+  updated=$(jq --arg ev "$event" --arg m "$matcher" \
+    --arg cmd "bash '$skills/hooks/$name'" '
+    {type: "command", command: $cmd, timeout: 10} as $hook
+    | .hooks[$ev] //= []
+    | if any(.hooks[$ev][]; .matcher == $m) then
+        .hooks[$ev] |= map(
+          if .matcher == $m and (any(.hooks[]?; .command == $cmd) | not)
+          then .hooks += [$hook] else . end)
+      else
+        .hooks[$ev] += [{matcher: $m, hooks: [$hook]}]
+      end' <<<"$updated")
+done <<<"$hooks"
+
+if [[ "$updated" != "$current" ]]; then
+  printf '%s\n' "$updated" >"$settings.tmp"
+  mv "$settings.tmp" "$settings"
+  echo "skills: added hooks to $settings"
+fi
