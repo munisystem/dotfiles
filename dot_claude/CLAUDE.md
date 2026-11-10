@@ -12,3 +12,10 @@
 
 - Use Conventional Commits format (feat:, fix:, docs:, chore:, refactor:, test:)
 - Write commit messages in English
+
+# Asking the person
+
+- When the work has a Linear issue, ask questions, report decisions and hand off
+  finished work on that issue (the `linear-task` skill: an `[agent]` comment,
+  then Needs Me with a `need` label), and wait with `linear-watch`.
+- When the work has no Linear issue, ask in the chat.
