@@ -22,8 +22,13 @@ eza                                    = "latest"   # registry short name -> asd
 "aqua:direnv/direnv"                   = "latest"
 "aqua:peco/peco"                       = "latest"   # interactive filter (sibling of fzf)
 "aqua:yonaskolb/XcodeGen"              = "latest"   # xcodegen
+"aqua:google/go-jsonnet"               = "latest"   # jsonnet, jsonnetfmt
 node                                   = "lts"      # npx bundled with node
-"aqua:astral-sh/uv"                    = "latest"   # uvx bundled with uv
+uv                                     = "0.13.4"   # uvx bundled with uv
+go                                     = "latest"
+aws                                    = { version = "latest", symlink_bins = "true" }
+aws-vault                              = "latest"
+agent-browser                          = "latest"
 # npm-backed CLIs — require node (the installer installs node first).
 "npm:pnpm"                             = "latest"
 "npm:nodemon"                          = "latest"

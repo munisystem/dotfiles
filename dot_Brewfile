@@ -1,8 +1,8 @@
-tap "facebook/fb", trusted: true
 tap "hanasuke/moralerspace"
 tap "homebrew/bundle"
 tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap"
 tap "kayac/tap"
+tap "meta/fb", "https://github.com/meta/homebrew-fb.git", trusted: true
 tap "olets/tap"
 tap "sachaos/todoist"
 tap "steipete/tap"
@@ -35,7 +35,7 @@ brew "tesseract-lang"
 # UNIX shell (command interpreter)
 brew "zsh"
 # A Powerful Command Line for automating iOS Simulators
-brew "facebook/fb/idb-companion", trusted: true
+brew "meta/fb/idb-companion", trusted: true
 # Command-line interface for 1Password
 cask "1password-cli"
 # Anthropic's official Claude AI desktop app
@@ -57,6 +57,8 @@ cask "font-moralerspace"
 cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Desktop app for terminals and coding agents
+cask "herdr-app"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
 # Knowledge base that works on top of a local folder of plain text Markdown files
