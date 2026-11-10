@@ -24,6 +24,7 @@ eza                                    = "latest"   # registry short name -> asd
 "aqua:yonaskolb/XcodeGen"              = "latest"   # xcodegen
 "aqua:google/go-jsonnet"               = "latest"   # jsonnet, jsonnetfmt
 node                                   = "lts"      # npx bundled with node
+python                                 = "3.14"     # prebuilt with its own expat; Homebrew's links the macOS one, which lacks symbols it needs
 uv                                     = "0.13.4"   # uvx bundled with uv
 go                                     = "latest"
 aws                                    = { version = "latest", symlink_bins = "true" }

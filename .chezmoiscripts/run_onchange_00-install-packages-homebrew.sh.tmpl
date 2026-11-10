@@ -1,4 +1,11 @@
 #!/bin/bash
 
 # Brewfile : hash {{ include "dot_Brewfile" | sha256sum }}
-brew bundle --global
+
+# A failing package (e.g. a cask whose app is owned by another user) must not
+# abort the rest of `chezmoi apply`, so report the failure and carry on.
+# Note: chezmoi records this run as done, so failed packages are retried only
+# when the Brewfile changes or by running `brew bundle --global` manually.
+if ! brew bundle --global; then
+  echo "WARNING: brew bundle failed; continuing with the remaining chezmoi scripts." >&2
+fi
