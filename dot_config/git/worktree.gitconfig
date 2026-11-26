@@ -1,0 +1,7 @@
+[commit]
+  gpgsign = false
+
+# Push over HTTPS with gh's token instead of the 1Password SSH agent.
+[url "https://github.com/"]
+  pushInsteadOf = git@github.com:
+  pushInsteadOf = ssh://git@github.com/
