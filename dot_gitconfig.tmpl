@@ -22,6 +22,26 @@
 [commit]
   gpgsign = true
 
+# Fetch from GitHub over HTTPS with gh's token, so fetches (T3 runs one per new
+# worktree) skip the 1Password SSH prompt. Pushes stay on SSH below.
+[url "https://github.com/"]
+  insteadOf = git@github.com:
+  insteadOf = ssh://git@github.com/
+
+[credential "https://github.com"]
+  helper =
+  helper = !~/.local/share/mise/shims/gh auth git-credential
+
+# Linked worktrees are where agents work: unsigned commits and HTTPS pushes.
+# Must stay after [commit] (last value wins) and before the pushInsteadOf below
+# (on equal-length matches the first one wins).
+[includeIf "gitdir:**/worktrees/**"]
+  path = ~/.config/git/worktree.gitconfig
+
+[url "git@github.com:"]
+  pushInsteadOf = git@github.com:
+  pushInsteadOf = ssh://git@github.com/
+
 [alias]
   cleanup = "!f() { \
     git fetch --prune; \
